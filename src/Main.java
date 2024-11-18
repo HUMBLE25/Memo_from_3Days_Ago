@@ -8,6 +8,7 @@ import opening.Opening;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Game Start!");
+        System.out.println("test git, GO!GO!");
 
         // Opening Scene
         Opening opening = new Opening();
