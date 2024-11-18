@@ -9,6 +9,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Game Start!");
         System.out.println("test git, GO!GO!");
+        System.out.println("keep going");
 
         // Opening Scene
         Opening opening = new Opening();
