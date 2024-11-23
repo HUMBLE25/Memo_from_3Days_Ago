@@ -5,7 +5,38 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50ca8883-6113-4291-86a0-079e05297edb" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start1.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start10.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start11.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start12.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start13.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start14.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start15.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start16.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start17.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start18.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start19.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start20.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start21.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start22.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start23.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start24.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start25.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start26.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start27.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start28.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start29.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start3.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start4.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start6.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start8.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/opening/Start9.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Opening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Opening.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stage1/Stage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stage1/Stage1.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,6 +64,33 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "Application.Opening (1).executor": "Run",
+    "Application.Opening (2).executor": "Run",
+    "Application.Opening.executor": "Run",
+    "Application.Start1 (1).executor": "Run",
+    "Application.Start1.executor": "Run",
+    "Application.Start10 (1).executor": "Run",
+    "Application.Start10.executor": "Run",
+    "Application.Start12.executor": "Run",
+    "Application.Start13.executor": "Run",
+    "Application.Start14 (1).executor": "Run",
+    "Application.Start14.executor": "Run",
+    "Application.Start15 (1).executor": "Run",
+    "Application.Start15.executor": "Run",
+    "Application.Start16.executor": "Run",
+    "Application.Start17.executor": "Run",
+    "Application.Start18.executor": "Run",
+    "Application.Start20.executor": "Run",
+    "Application.Start25.executor": "Run",
+    "Application.Start26 (1).executor": "Run",
+    "Application.Start26.executor": "Run",
+    "Application.Start28 (1).executor": "Run",
+    "Application.Start28.executor": "Run",
+    "Application.Start5.executor": "Run",
+    "Application.Start6.executor": "Run",
+    "Application.Start8 (1).executor": "Run",
+    "Application.Start8.executor": "Run",
+    "Application.Start9.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "dart.analysis.tool.window.visible": "false",
@@ -45,7 +103,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "onboarding.tips.debug.path": "/Users/kimjingyeom/IdeaProjects/Memo_from_3_Days _Ago/src/Main.java",
-    "settings.editor.selected.configurable": "preferences.language.and.region",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.Java",
     "show.migrate.to.gradle.popup": "false",
     "vue.rearranger.settings.migration": "true"
   }
@@ -55,17 +113,79 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="Application.Opening">
+    <configuration name="Opening (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="opening.Opening" />
       <module name="Memo_from_3_Days _Ago" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="opening.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Opening (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="opening.Opening" />
+      <module name="Memo_from_3_Days _Ago" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="opening.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Opening" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="opening.Opening" />
+      <module name="Memo_from_3_Days _Ago" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="opening.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Start1 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="opening.Start1" />
+      <module name="Memo_from_3_Days _Ago" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="opening.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Start1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="opening.Start1" />
+      <module name="Memo_from_3_Days _Ago" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="opening.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Opening" />
+        <item itemvalue="Application.Start1 (1)" />
+        <item itemvalue="Application.Opening (1)" />
+        <item itemvalue="Application.Start1" />
+        <item itemvalue="Application.Opening (2)" />
       </list>
     </recent_temporary>
   </component>
@@ -85,11 +205,19 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1731920554554</updated>
-      <workItem from="1732099435965" duration="458000" />
+      <workItem from="1732099435965" duration="20862000" />
+      <workItem from="1732163327463" duration="3385000" />
+      <workItem from="1732168597566" duration="127000" />
+      <workItem from="1732257313261" duration="10364000" />
+      <workItem from="1732268677922" duration="9886000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
