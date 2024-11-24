@@ -9,17 +9,23 @@ public class Start8 extends JFrame {
     private Timer blinkTimer;
 
     public Start8() {
-        setTitle("Start1");
+        setTitle("Start8");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        // 화면 크기를 디스플레이 크기로 설정
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension screenSize = toolkit.getScreenSize();
+        int width = (int) screenSize.getWidth();
+        int height = (int) screenSize.getHeight();
+        setSize(width, height);
 
         setContentPane(new Start8.MyPanel());
         getContentPane().setBackground(Color.BLACK);
         getContentPane().setLayout(null);
 
-        setSize(1440, 1024);
         setVisible(true);
 
-        BlinkingButton();// 삼각형 깜빡이기 시작
+        BlinkingButton();
 
 
 
@@ -46,7 +52,7 @@ public class Start8 extends JFrame {
                 repaint();  // 화면 다시 그리기
             }
         });
-        blinkTimer.start();  // 타이머 시작
+        blinkTimer.start();
     }
 
     // 버튼에 대해 삼각형 그리기
@@ -59,23 +65,23 @@ public class Start8 extends JFrame {
 
             // 캐릭터 이름 라벨
             JLabel nameLabel = new JLabel("명지훈");
-            nameLabel.setBounds(200, 390, 300, 50);
-            nameLabel.setFont(new Font("Inter", Font.BOLD, 48));
+            nameLabel.setBounds(200, 400, 300, 50);
+            nameLabel.setFont(new Font("Inter", Font.BOLD, 40));
             nameLabel.setForeground(Color.WHITE);
 
             // 캐릭터 프로필 아이콘
             JLabel profileLabel = new JLabel(profileIcon);
-            profileLabel.setBounds(45, 340, 130, 134);
+            profileLabel.setBounds(45, 345, 130, 134);
 
             // 대화 내용 텍스트
             JTextArea textArea = new JTextArea("추락사인만큼 웅성거리는 소리 속에서 벌써 그가 자살한 것이 아니냐는 말이나오고 있다.");
-            textArea.setBounds(50, 530, 1100, 100);
+            textArea.setBounds(55, 525, 1100, 100);
             textArea.setFont(new Font("Inter", Font.PLAIN, 30));
             textArea.setForeground(Color.white);
-            textArea.setEditable(false); // 편집 불가능
-            textArea.setOpaque(false); // 배경을 투명하게 설정
-            textArea.setLineWrap(true); // 줄 바꿈 허용
-            textArea.setWrapStyleWord(true); // 단어 단위로 줄 바꿈
+            textArea.setEditable(false);
+            textArea.setOpaque(false);
+            textArea.setLineWrap(true);
+            textArea.setWrapStyleWord(true);
 
             // 삼각형 클릭 이벤트 추가
             addMouseListener(new MouseAdapter() {
@@ -91,7 +97,7 @@ public class Start8 extends JFrame {
                 }
             });
 
-            // 컴포넌트 추가
+
             add(nameLabel);
             add(profileLabel);
             add(textArea);
@@ -101,7 +107,7 @@ public class Start8 extends JFrame {
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
             g.setColor(Color.DARK_GRAY);
-            g.fillRect(30, 500, 1220, 245);
+            g.fillRect(30, 500, 1205, 245);
 
             if (isTriangleVisible) {
                 // 삼각형 그리기

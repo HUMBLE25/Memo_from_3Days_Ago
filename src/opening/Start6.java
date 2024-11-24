@@ -9,11 +9,17 @@ public class Start6 extends JFrame {
         setTitle("Start6");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
+        // 화면 크기를 디스플레이 크기로 설정
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension screenSize = toolkit.getScreenSize();
+        int width = (int) screenSize.getWidth();
+        int height = (int) screenSize.getHeight();
+        setSize(width, height);
+
         setContentPane(new Start6.MyPanel());
         getContentPane().setBackground(Color.BLACK);
         getContentPane().setLayout(null);
 
-        setSize(1440, 1024);
         setVisible(true);
 
 
@@ -34,20 +40,32 @@ public class Start6 extends JFrame {
         public MyPanel(){
             setLayout(null);
 
-            String text = "사회교육관 건물 아래 싸늘하게 죽어있는 건 같은 과 내 죽마고우 문성하였다.";
 
-            JTextArea textArea = new JTextArea(text);
-            textArea.setBounds(280, 312, 800, 400);
-            textArea.setFont(new Font("Inter", Font.PLAIN, 40));
-            textArea.setForeground(Color.WHITE);
-            textArea.setBackground(Color.BLACK);
-            textArea.setLineWrap(true); // 줄 바꿈 허용
-            textArea.setWrapStyleWord(true); // 단어 단위로 줄 바꿈
-            textArea.setEditable(false); // 텍스트 수정 불가능
+            // 애니메이션 텍스트
+            JLabel animatedText = new JLabel("", SwingConstants.CENTER);
+            animatedText.setFont(new Font("Inter", Font.BOLD, 40));
+            animatedText.setForeground(Color.WHITE);
+            animatedText.setBounds(240, 150, 800, 400); // 위치와 크기
+
+            add(animatedText);
+
+            String fullText = "사회교육관 건물 아래 싸늘하게 죽어있는 건 같은 과 내 죽마고우 문성하였다.";
+            Timer textAnimation = new Timer(50, new ActionListener() {
+                int charIndex = 0;
+
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    if (charIndex < fullText.length()) {
+                        animatedText.setText("<html>" + fullText.substring(0, ++charIndex).replace("\n", "<br>") + "</html>");
+                    } else {
+                        ((Timer) e.getSource()).stop();
+                    }
+                }
+            });
+            textAnimation.start();
 
 
 
-            add(textArea);
         }
     }
 

@@ -34,20 +34,32 @@ public class Start15 extends JFrame {
         public MyPanel(){
             setLayout(null);
 
-            String text = "3일전, 대학교 흡연실";
+            // 애니메이션 텍스트
+            JLabel animatedText = new JLabel("", SwingConstants.CENTER);
+            animatedText.setFont(new Font("Inter", Font.BOLD, 40));
+            animatedText.setForeground(Color.WHITE);
+            animatedText.setBounds(240, 150, 800, 400); // 위치와 크기
 
-            JTextArea textArea = new JTextArea(text);
-            textArea.setBounds(460, 312, 400, 400);
-            textArea.setFont(new Font("Inter", Font.PLAIN, 40));
-            textArea.setForeground(Color.WHITE);
-            textArea.setBackground(Color.BLACK);
-            textArea.setLineWrap(true); // 줄 바꿈 허용
-            textArea.setWrapStyleWord(true); // 단어 단위로 줄 바꿈
-            textArea.setEditable(false); // 텍스트 수정 불가능
+            add(animatedText);
+
+            String fullText = "3일전 , 대학교 휴게실";
+            Timer textAnimation = new Timer(50, new ActionListener() {
+                int charIndex = 0;
+
+                @Override
+                public void actionPerformed(ActionEvent e) {
+                    if (charIndex < fullText.length()) {
+                        animatedText.setText("<html>" + fullText.substring(0, ++charIndex).replace("\n", "<br>") + "</html>");
+                    } else {
+                        ((Timer) e.getSource()).stop();
+                    }
+                }
+            });
+            textAnimation.start();
 
 
 
-            add(textArea);
+
         }
     }
 

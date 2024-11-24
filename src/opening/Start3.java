@@ -6,15 +6,22 @@ import java.awt.event.*;
 
 public class Start3 extends JFrame {
     public Start3() {
-        setTitle("Start");
+        setTitle("Start3");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
+
+        // 화면 크기를 디스플레이 크기로 설정
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension screenSize = toolkit.getScreenSize();
+        int width = (int) screenSize.getWidth();
+        int height = (int) screenSize.getHeight();
+        setSize(width, height);
 
         setContentPane(new Start3.MyPanel());
         getContentPane().setBackground(Color.BLACK);
         getContentPane().setLayout(null);
 
-        setSize(1440, 1024);
         setVisible(true);
+
 
 
         addKeyListener(new KeyAdapter() {

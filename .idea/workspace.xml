@@ -5,38 +5,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50ca8883-6113-4291-86a0-079e05297edb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/opening/Start1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start10.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start11.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start12.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start13.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start14.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start15.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start16.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start17.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start18.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start19.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start20.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start21.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start22.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start23.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start24.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start25.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start26.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start27.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start28.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start29.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start6.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start7.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start8.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/opening/Start9.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/opening/Opening.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Opening.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/stage1/Stage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stage1/Stage1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start10.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start10.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start11.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start11.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start12.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start12.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start13.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start13.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start14.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start14.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start15.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start15.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start16.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start16.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start17.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start17.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start18.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start18.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start19.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start19.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start20.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start20.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start21.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start21.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start22.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start22.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start23.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start23.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start24.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start24.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start25.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start25.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start26.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start26.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start27.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start27.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start28.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start28.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start29.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start29.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start4.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start5.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start6.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start7.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start8.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start8.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/opening/Start9.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/opening/Start9.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +89,7 @@
     "Application.Start6.executor": "Run",
     "Application.Start8 (1).executor": "Run",
     "Application.Start8.executor": "Run",
+    "Application.Start9 (1).executor": "Run",
     "Application.Start9.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
@@ -114,32 +114,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Opening">
-    <configuration name="Opening (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="opening.Opening" />
-      <module name="Memo_from_3_Days _Ago" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="opening.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Opening (2)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="opening.Opening" />
-      <module name="Memo_from_3_Days _Ago" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="opening.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Opening" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="opening.Opening" />
       <module name="Memo_from_3_Days _Ago" />
@@ -153,8 +127,8 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Start1 (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="opening.Start1" />
+    <configuration name="Start15" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="opening.Start15" />
       <module name="Memo_from_3_Days _Ago" />
       <extension name="coverage">
         <pattern>
@@ -166,8 +140,34 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Start1" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="opening.Start1" />
+    <configuration name="Start18" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="opening.Start18" />
+      <module name="Memo_from_3_Days _Ago" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="opening.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Start26" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="opening.Start26" />
+      <module name="Memo_from_3_Days _Ago" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="opening.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Start28" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="opening.Start28" />
       <module name="Memo_from_3_Days _Ago" />
       <extension name="coverage">
         <pattern>
@@ -182,10 +182,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Opening" />
-        <item itemvalue="Application.Start1 (1)" />
-        <item itemvalue="Application.Opening (1)" />
-        <item itemvalue="Application.Start1" />
-        <item itemvalue="Application.Opening (2)" />
+        <item itemvalue="Application.Start28" />
+        <item itemvalue="Application.Start26" />
+        <item itemvalue="Application.Start18" />
+        <item itemvalue="Application.Start15" />
       </list>
     </recent_temporary>
   </component>
@@ -210,11 +210,24 @@
       <workItem from="1732168597566" duration="127000" />
       <workItem from="1732257313261" duration="10364000" />
       <workItem from="1732268677922" duration="9886000" />
+      <workItem from="1732373156473" duration="285000" />
+      <workItem from="1732428026605" duration="6160000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

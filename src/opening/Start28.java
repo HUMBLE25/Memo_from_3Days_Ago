@@ -15,23 +15,28 @@ public class Start28 extends JFrame {
         setTitle("Start28");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-
-        getContentPane().setBackground(Color.BLACK); // 배경색 설정
+        // 화면 크기를 디스플레이 크기로 설정
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension screenSize = toolkit.getScreenSize();
+        int width = (int) screenSize.getWidth();
+        int height = (int) screenSize.getHeight();
+        setSize(width, height);
+        getContentPane().setBackground(Color.BLACK);
         getContentPane().setLayout(null);
 
-        setSize(1440, 1024);
         setVisible(true);
 
-        showCustomDialog(); // 커스텀 다이얼로그 표시
+
+        showCustomDialog();
     }
 
     public void showCustomDialog() {
-        // JDialog 생성
+
         JDialog dialog = new JDialog(this, "Custom Dialog", true);
         dialog.setSize(820, 300);
-        dialog.setLayout(null); // 절대 위치 설정
-        dialog.setUndecorated(true); // 테두리 제거
-        dialog.setShape(new java.awt.geom.RoundRectangle2D.Double(0, 0, 820, 300, 50, 50)); // 둥근 모서리
+        dialog.setLayout(null);
+        dialog.setUndecorated(true);
+        dialog.setShape(new java.awt.geom.RoundRectangle2D.Double(0, 0, 820, 300, 50, 50));
         dialog.getContentPane().setLayout(new BorderLayout()); // 배경에 그라데이션 추가
 
         JPanel backgroundPanel = new JPanel() {

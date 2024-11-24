@@ -60,7 +60,7 @@ public class Start26 extends JFrame {
             // 캐릭터 이름 라벨
             JLabel nameLabel = new JLabel("전명호");
             nameLabel.setBounds(200, 390, 300, 50);
-            nameLabel.setFont(new Font("Inter", Font.BOLD, 48));
+            nameLabel.setFont(new Font("Inter", Font.BOLD, 40));
             nameLabel.setForeground(Color.WHITE);
 
             // 캐릭터 프로필 아이콘
@@ -77,7 +77,7 @@ public class Start26 extends JFrame {
 
 
             JLabel profileLabel = new JLabel(resizedIcon);
-            profileLabel.setBounds(45, 340, newWidth, newHeight);
+            profileLabel.setBounds(45, 345, newWidth, newHeight);
 
             // 대화 내용 텍스트
             JTextArea textArea = new JTextArea("문성하가 죽은 덕분에 불안할 일이 사라졌어. 오히려 죽어줘서 고맙다는 생각이 드네.");
@@ -114,7 +114,7 @@ public class Start26 extends JFrame {
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
             g.setColor(Color.DARK_GRAY);
-            g.fillRect(30, 500, 1220, 245);
+            g.fillRect(30, 500, 1205, 245);
 
             if (isTriangleVisible) {
                 // 삼각형 그리기

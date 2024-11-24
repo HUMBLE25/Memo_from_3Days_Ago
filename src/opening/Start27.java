@@ -12,17 +12,23 @@ public class Start27 extends JFrame {
         setTitle("Start27");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
+        // 화면 크기를 디스플레이 크기로 설정
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension screenSize = toolkit.getScreenSize();
+        int width = (int) screenSize.getWidth();
+        int height = (int) screenSize.getHeight();
+        setSize(width, height);
+
         setContentPane(new Start27.MyPanel());
         getContentPane().setBackground(Color.BLACK);
         getContentPane().setLayout(null);
 
-        setSize(1440, 1024);
         setVisible(true);
 
-        BlinkingButton();// 삼각형 깜빡이기 시작
+        BlinkingButton();
 
 
-        // 키보드 리스너 추가
+
         addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
@@ -32,8 +38,8 @@ public class Start27 extends JFrame {
             }
         });
 
-        setFocusable(true); // 키보드 입력을 받을 수 있도록 설정
-        requestFocusInWindow(); // 윈도우가 포커스를 가지도록 설정
+        setFocusable(true);
+        requestFocusInWindow();
     }
     public void BlinkingButton() {
 
@@ -46,7 +52,7 @@ public class Start27 extends JFrame {
                 repaint();  // 화면 다시 그리기
             }
         });
-        blinkTimer.start();  // 타이머 시작
+        blinkTimer.start();
     }
 
     // 버튼에 대해 삼각형 그리기
@@ -55,28 +61,27 @@ public class Start27 extends JFrame {
         private Image profileImage = profileIcon.getImage();
 
         public MyPanel() {
-            setLayout(null); // 레이아웃 설정
+            setLayout(null);
 
             // 캐릭터 이름 라벨
             JLabel nameLabel = new JLabel("명지훈");
-            nameLabel.setBounds(200, 390, 300, 50);
-            nameLabel.setFont(new Font("Inter", Font.BOLD, 48));
+            nameLabel.setBounds(200, 400, 300, 50);
+            nameLabel.setFont(new Font("Inter", Font.BOLD, 40));
             nameLabel.setForeground(Color.WHITE);
 
             // 캐릭터 프로필 아이콘
             JLabel profileLabel = new JLabel(profileIcon);
-            profileLabel.setBounds(45, 340, 130, 134);
+            profileLabel.setBounds(45, 345, 130, 134);
 
             // 대화 내용 텍스트
             JTextArea textArea = new JTextArea("역시, 이건 단순한 사고가 아니다.");
-            textArea.setBounds(50, 530, 1180, 150);
+            textArea.setBounds(55, 525, 1160, 150);
             textArea.setFont(new Font("Inter", Font.PLAIN, 30));
             textArea.setForeground(Color.white);
-            textArea.setEditable(false); // 편집 불가능
-            textArea.setOpaque(false); // 배경을 투명하게 설정
-            textArea.setLineWrap(true); // 줄 바꿈 허용
-            textArea.setWrapStyleWord(true); // 단어 단위로 줄 바꿈
-
+            textArea.setEditable(false);
+            textArea.setOpaque(false);
+            textArea.setLineWrap(true);
+            textArea.setWrapStyleWord(true);
 
             // 삼각형 클릭 이벤트 추가
             addMouseListener(new MouseAdapter() {
@@ -92,7 +97,7 @@ public class Start27 extends JFrame {
                 }
             });
 
-            // 컴포넌트 추가
+
             add(nameLabel);
             add(profileLabel);
             add(textArea);
@@ -102,7 +107,7 @@ public class Start27 extends JFrame {
         public void paintComponent(Graphics g) {
             super.paintComponent(g);
             g.setColor(Color.DARK_GRAY);
-            g.fillRect(30, 500, 1220, 245);
+            g.fillRect(30, 500, 1205, 245);
 
             if (isTriangleVisible) {
                 // 삼각형 그리기
@@ -125,9 +130,8 @@ public class Start27 extends JFrame {
         }
     }
 
-
     private void goToNextPage() {
-        Start27.this.dispose(); // 현재 창 닫기
+        Start27.this.dispose();
         new Start28();
     }
 
