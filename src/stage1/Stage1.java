@@ -199,6 +199,12 @@ public class Stage1 extends JFrame {
                         "이제 복도에서 단서를 찾아야 해.", new ImageIcon("images/characters/명지훈_오른쪽.png"), null)
         };
     }
+    // 헬퍼 메서드: ImageIcon을 지정된 크기로 조정
+    private ImageIcon scaleImageIcon(ImageIcon icon, int width, int height) {
+        if (icon == null) return null; // 이미지가 없을 경우 null 반환
+        Image scaledImage = icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+        return new ImageIcon(scaledImage); // 조정된 Image를 새로운 ImageIcon으로 반환
+    }
 
     // 대화 장면을 생성하는 메서드
     private JPanel createDialogueScene() {
@@ -244,6 +250,7 @@ public class Stage1 extends JFrame {
 
         // 대화 상자, 장면에 삽입
         dialogueScene.add(dialogueBox);
+
         // 배경 이미지 설정
         backgroundImage = new JLabel();
         backgroundImage.setBounds(IMAGE_X, IMAGE_Y, IMAGE_WIDTH, IMAGE_HEIGHT);
@@ -256,6 +263,11 @@ public class Stage1 extends JFrame {
         dialogueScene.setFocusable(true);
         dialogueScene.requestFocusInWindow();
 
+        // Z-Index 조정
+        SwingUtilities.invokeLater(() -> {
+            dialogueScene.setComponentZOrder(dialogueBox, 0); // 대화 상자를 가장 앞에 표시
+            dialogueScene.setComponentZOrder(characterImageLabel, 1); // 캐릭터 이미지를 뒤에 표시
+        });
         return dialogueScene;
     }
 
@@ -271,15 +283,16 @@ public class Stage1 extends JFrame {
             profileImageLabel.setIcon(currentScene.getProfileImage());
             profileImageLabel.setVisible(currentScene.getProfileImage() != null);
 
+            // 캐릭터 이미지 업데이트
+            ImageIcon scaledCharacterImage = scaleImageIcon(currentScene.getCharacterImage(), CHARACTER_WIDTH, CHARACTER_HEIGHT);
+            characterImageLabel.setIcon(scaledCharacterImage); // 크기 조정된 이미지 설정
+            characterImageLabel.setVisible(currentScene.getCharacterImage() != null);
+
             // 대화 텍스트 업데이트
             dialogueText.setText(currentScene.getDialogue());
             boolean hasDialogue = currentScene.getDialogue() != null;
             dialogueBox.setVisible(hasDialogue); // 대화 상자를 숨기거나 표시
             nextBtn.setVisible(hasDialogue); // "다음" 버튼을 숨기거나 표시
-
-            // 캐릭터 이미지 업데이트
-            characterImageLabel.setIcon(currentScene.getCharacterImage());
-            characterImageLabel.setVisible(currentScene.getCharacterImage() != null);
 
             // 배경 이미지 업데이트
             backgroundImage.setIcon(currentScene.getBackgroundImage());
