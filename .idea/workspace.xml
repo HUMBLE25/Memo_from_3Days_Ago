@@ -5,11 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50ca8883-6113-4291-86a0-079e05297edb" name="Changes" comment="">
+
       <change afterPath="$PROJECT_DIR$/src/stage3/Stage3Background_Smoking.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/stage3/Stage3MJH_KDJ.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stage3/Stage3.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stage3/Stage3.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stage3/Stage3Background_Gym.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stage3/Stage3Background_Gym.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ending/Ending.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ending/Ending.java" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,14 +27,33 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <excluded-from-favorite>
+      <branch-storage>
+        <map>
+          <entry type="LOCAL">
+            <value>
+              <list>
+                <branch-info repo="$PROJECT_DIR$" source="master" />
+              </list>
+            </value>
+          </entry>
+        </map>
+      </branch-storage>
+    </excluded-from-favorite>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
-  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "HUMBLE25"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/HUMBLE25/Memo_from_3Days_Ago.git",
+    "accountId": "9cf33eea-2093-4ad3-aafc-3de00204cbf1"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -57,7 +79,7 @@
     &quot;onboarding.tips.debug.path&quot;: &quot;/Users/kimjingyeom/IdeaProjects/Memo_from_3_Days _Ago/src/Main.java&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.language.and.region&quot;
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -125,11 +147,13 @@
     </configuration>
     <recent_temporary>
       <list>
+
         <item itemvalue="Application.Stage3MJH_KDJ" />
         <item itemvalue="Application.Stage3" />
         <item itemvalue="Application.Stage3Background_Smoking" />
         <item itemvalue="Application.Stage3Background_Gym" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="애플리케이션.Main" />
       </list>
     </recent_temporary>
   </component>
