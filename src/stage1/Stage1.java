@@ -152,10 +152,6 @@ public class Stage1 extends JFrame {
         dialogueText.setFont(new Font("VT323", Font.PLAIN, 36));
         dialogueText.setForeground(Color.WHITE);
         dialogueText.setBackground(new Color(0x333C41)); // 배경색을 대화 상자와 일치
-//        dialogueText.setLineWrap(true); // 줄바꿈 활성화
-//        dialogueText.setWrapStyleWord(false); // 단어 단위로 줄바꿈
-//        dialogueText.setMargin(new Insets(10, 10, 15, 10)); // 텍스트 패딩으로 line-height처럼 설정
-//        dialogueText.setEditable(false); // 편집불가
         dialogueText.setBounds(DIALOGUE_TEXT_X, DIALOGUE_TEXT_Y, DIALOGUE_TEXT_WIDTH, DIALOGUE_TEXT_HEIGHT);
         dialogueText.setVerticalAlignment(SwingConstants.TOP); // 텍스트를 상단 정렬
         dialogueBox.add(dialogueText);

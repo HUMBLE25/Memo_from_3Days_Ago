@@ -26,9 +26,11 @@ public class Main extends JFrame{
         System.out.println("test git, GO!GO!");
         System.out.println("keep going");
 
+        // 통합을 어덯게 해야 할까?
+        // 마지막으로 반환값을 이용해야 할까?
+        // 순차적으로 실행이 될 수 있도록 해야 한다.
         // Opening Scene
         Opening opening = new Opening();
-        opening.run();
 
         // Stage 1
         Stage1 stage1 = new Stage1();
@@ -37,14 +39,11 @@ public class Main extends JFrame{
 
         // Stage 3
         Stage3 stage3 = new Stage3();
-        stage3.run();
 
         // Stage 4
         Stage4 stage4 = new Stage4();
-        stage4.run();
 
         // Ending Scene
         Ending ending = new Ending();
-        ending.run();
     }
 }

@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50ca8883-6113-4291-86a0-079e05297edb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/stage2/Stage2Data.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/BaseStage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stage1/Stage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stage1/Stage1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stage2/Stage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stage2/Stage2.java" afterDir="false" />
     </list>
@@ -58,20 +60,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "Application.Stage1.executor": "Run",
-    "Application.Stage2.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "gyeom/stage2",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/kimjingyeom/IdeaProjects/Memo_from_3_Days _Ago/images/characters",
-    "onboarding.tips.debug.path": "/Users/kimjingyeom/IdeaProjects/Memo_from_3_Days _Ago/src/Main.java",
-    "settings.editor.selected.configurable": "preferences.language.and.region"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Stage1.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Stage2.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;gyeom/stage2&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/kimjingyeom/IdeaProjects/Memo_from_3_Days _Ago/images/characters&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/kimjingyeom/IdeaProjects/Memo_from_3_Days _Ago/src/Main.java&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.language.and.region&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/images/characters" />
