@@ -113,7 +113,7 @@ public class Stage1 extends JFrame {
     // UI 컴포넌트 (대화 장면에서 사용하는 요소들)
     private JLabel profileNameLabel; // 캐릭터 이름
     private JLabel profileImageLabel; // 캐릭터 프로필 이미지
-    private JLabel dialogueText; // 대화 텍스트
+    private JTextArea dialogueText; // 대화 텍스트
     private JLabel characterImageLabel; // 캐릭터 전체 이미지
     private JLabel backgroundImage; // 배경 이미지
     private JPanel dialogueBox;
@@ -144,7 +144,7 @@ public class Stage1 extends JFrame {
     private static final int DIALOGUE_TEXT_X = 20;
     private static final int DIALOGUE_TEXT_Y = 20;
     private static final int DIALOGUE_TEXT_WIDTH = 1300;
-    private static final int DIALOGUE_TEXT_HEIGHT = 50;
+    private static final int DIALOGUE_TEXT_HEIGHT = 200;
 
     private static final int IMAGE_X = 0;
     private static final int IMAGE_Y = 0;
@@ -195,8 +195,18 @@ public class Stage1 extends JFrame {
                         "먼저 사교관에서 성하의 흔적들을 찾아보자.", null, null),
                 new SceneData(null, null, null,
                         null, new ImageIcon("images/stage1/학교.png")),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"),
-                        "이제 복도에서 단서를 찾아야 해.", new ImageIcon("images/characters/명지훈_오른쪽.png"), null)
+                new SceneData(null, null, null,
+                        null, new ImageIcon("images/stage1/사물함_1.png")),
+                new SceneData(null, null, null,
+                        null, new ImageIcon("images/stage1/사물함_2.png")),
+                // 무엇을 클릭하던지 문성하것 부터 보도록 함. 11.25 보고서 제출이후 수정할 계획
+                new SceneData(null, null, null,
+                        null, new ImageIcon("images/stage1/문성하_사물함/문성하_0.png")),
+                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "전명호는 우리 대학 최초로 청림 신춘문예 대상에 이름을 올려 졸업 전에 등단을 준비하는 선배이다. 이 일로 우리 학교가 기사에 많이 오르내리고 교수가 매우 좋아했던 걸로 기억한다.",
+                        null, new ImageIcon("images/stage1/문성하_사물함/문성하_1.png")),
+
+                new SceneData(null, null, null,
+                        null, new ImageIcon("images/stage1/사물함_2.png")),
         };
     }
     // 헬퍼 메서드: ImageIcon을 지정된 크기로 조정
@@ -205,6 +215,27 @@ public class Stage1 extends JFrame {
         Image scaledImage = icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
         return new ImageIcon(scaledImage); // 조정된 Image를 새로운 ImageIcon으로 반환
     }
+
+    // 헬퍼 메서드: 배경 이미지를 원본 크기로 중앙에 배치
+    private void centerBackgroundImage(ImageIcon icon) {
+        if (icon == null) {
+            backgroundImage.setIcon(null); // 이미지가 없으면 비우기
+            return;
+        }
+
+        // 원본 이미지 크기를 가져옴
+        int imageWidth = icon.getIconWidth();
+        int imageHeight = icon.getIconHeight();
+
+        // 중앙 좌표 계산
+        int x = (WINDOW_WIDTH - imageWidth) / 2;
+        int y = (WINDOW_HEIGHT - imageHeight) / 2;
+
+        // 이미지 설정 및 위치 지정
+        backgroundImage.setIcon(icon);
+        backgroundImage.setBounds(x, y, imageWidth, imageHeight);
+    }
+
 
     // 대화 장면을 생성하는 메서드
     private JPanel createDialogueScene() {
@@ -234,9 +265,14 @@ public class Stage1 extends JFrame {
         dialogueBox.setBounds(DIALOGUE_BOX_X,DIALOGUE_BOX_Y,DIALOGUE_BOX_WIDTH,DIALOGUE_BOX_HEIGHT);
 
         // 대화 텍스트 설정
-        dialogueText = new JLabel();
+        dialogueText = new JTextArea();
         dialogueText.setFont(new Font("VT323", Font.PLAIN, 36));
         dialogueText.setForeground(Color.WHITE);
+        dialogueText.setBackground(new Color(0x333C41)); // 배경색을 대화 상자와 일치
+        dialogueText.setLineWrap(true); // 줄바꿈 활성화
+        dialogueText.setWrapStyleWord(true); // 단어 단위로 줄바꿈
+        dialogueText.setMargin(new Insets(10, 10, 15, 10)); // 텍스트 패딩으로 line-height처럼 설정
+        dialogueText.setEditable(false); // 편집불가
         dialogueText.setBounds(DIALOGUE_TEXT_X, DIALOGUE_TEXT_Y, DIALOGUE_TEXT_WIDTH, DIALOGUE_TEXT_HEIGHT);
         dialogueBox.add(dialogueText);
 
@@ -253,7 +289,7 @@ public class Stage1 extends JFrame {
 
         // 배경 이미지 설정
         backgroundImage = new JLabel();
-        backgroundImage.setBounds(IMAGE_X, IMAGE_Y, IMAGE_WIDTH, IMAGE_HEIGHT);
+//        backgroundImage.setBounds(IMAGE_X, IMAGE_Y, IMAGE_WIDTH, IMAGE_HEIGHT);
         dialogueScene.add(backgroundImage);
 
         // 리스너 설정
@@ -265,8 +301,9 @@ public class Stage1 extends JFrame {
 
         // Z-Index 조정
         SwingUtilities.invokeLater(() -> {
-            dialogueScene.setComponentZOrder(dialogueBox, 0); // 대화 상자를 가장 앞에 표시
-            dialogueScene.setComponentZOrder(characterImageLabel, 1); // 캐릭터 이미지를 뒤에 표시
+            dialogueBox.setComponentZOrder(nextBtn,0); // "다음" 버튼을 대화 상자 위에 표시
+            dialogueScene.setComponentZOrder(dialogueBox, 1); // 대화 상자를 두 번째 표시
+            dialogueScene.setComponentZOrder(characterImageLabel, 2); // 캐릭터 이미지를 세 번째 표시
         });
         return dialogueScene;
     }
@@ -295,7 +332,9 @@ public class Stage1 extends JFrame {
             nextBtn.setVisible(hasDialogue); // "다음" 버튼을 숨기거나 표시
 
             // 배경 이미지 업데이트
-            backgroundImage.setIcon(currentScene.getBackgroundImage());
+            // 배경 이미지 업데이트 및 중앙 배치
+            centerBackgroundImage(currentScene.getBackgroundImage());
+//            backgroundImage.setIcon(currentScene.getBackgroundImage());
 
             // 다음 장면으로 이동하기 위해 인덱스 증가
             currentSceneIndex++;
