@@ -6,7 +6,6 @@ import java.awt.*;
 public class Stage3Background_Gym extends JFrame {
     public Stage3Background_Gym(){
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    Container c = getContentPane();
     setContentPane(new Mypanel());
 
     setSize(1440,1024);

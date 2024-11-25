@@ -19,6 +19,12 @@ public class Stage3 extends JFrame{
         JLabel characterLabel = new JLabel(characterIcon);
         characterLabel.setBounds(62, 574, characterIcon.getIconWidth(), characterIcon.getIconHeight()); // 이미지 위치 조정
 
+        //이름 불러오기\
+        JLabel nameLabel = new JLabel("명지훈");
+        nameLabel.setForeground(Color.WHITE);
+        nameLabel.setFont(new Font("Serif", Font.PLAIN, 25)); // 폰트 크기 설정
+        nameLabel.setBounds(200, 510, 100, 30); // 이름 라벨의 위치 설정 (캐릭터 이미지 옆)
+
         // 텍스트 박스 패널 설정
         JPanel textBoxPanel = new JPanel();
         textBoxPanel.setBackground(new Color(55, 67, 79)); // 텍스트 박스 배경색 설정
@@ -46,6 +52,7 @@ public class Stage3 extends JFrame{
         // 프레임에 이미지와 텍스트 박스 추가
         add(characterLabel);
         add(textBoxPanel);
+        add(nameLabel);
 
         setVisible(true);
     }
