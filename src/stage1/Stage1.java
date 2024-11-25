@@ -233,7 +233,6 @@ public class Stage1 extends JFrame {
             System.out.println("🫠🫠🫠🫠스토리가 끝났어요!🫠🫠🫠🫠");
         }
     }
-
     public static void main(String[] args) {
         new Stage1(); // Stage1 실행
     }
