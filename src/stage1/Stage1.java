@@ -92,6 +92,7 @@ public class Stage1 extends JFrame {
     private void initStoryData() {
         storyData = Stage1Data.getScenes();
     }
+
     // 헬퍼 메서드: ImageIcon을 지정된 크기로 조정
     private ImageIcon scaleImageIcon(ImageIcon icon, int width, int height) {
         if (icon == null) return null; // 이미지가 없을 경우 null 반환

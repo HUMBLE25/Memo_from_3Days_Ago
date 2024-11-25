@@ -40,6 +40,8 @@ public abstract class BaseStage extends JFrame {
 
         add(mainPanel);
         initializeComponents();
+
+
     }
 
     private void initializeComponents() {
@@ -80,17 +82,27 @@ public abstract class BaseStage extends JFrame {
         dialogueBox.add(nextBtn);
 
         // 배경 이미지 설정
-        // 공간만 확보한다.
         backgroundImage = new JLabel();
     }
 
     protected JPanel createDialogueScene() {
+        // 대화 장면 설정
         JPanel dialogueScene = new JPanel(null);
         dialogueScene.setBackground(Color.BLACK);
+
+        // 프로필 이름 붙이기
         dialogueScene.add(profileNameLabel);
+
+        // 프로필 이미지 붙이기
         dialogueScene.add(profileImageLabel);
+
+        // 캐릭터 이미지 붙이기
         dialogueScene.add(characterImageLabel);
+
+        // 대화 상자 붙이기
         dialogueScene.add(dialogueBox);
+
+        // 배경 이미지 붙이기
         dialogueScene.add(backgroundImage);
 
         // 리스너 설정
@@ -115,32 +127,36 @@ public abstract class BaseStage extends JFrame {
         if (currentSceneIndex < storyData.length) {
             SceneData currentScene = storyData[currentSceneIndex];
 
+            // 프로필 이름 업데이트
             profileNameLabel.setText(currentScene.getProfileName());
             profileNameLabel.setVisible(currentScene.getProfileName() != null);
 
+            // 프로필 이미지 업데이트
             profileImageLabel.setIcon(currentScene.getProfileImage());
             profileImageLabel.setVisible(currentScene.getProfileImage() != null);
 
+            // 캐릭터 이미지 업데이트
             ImageIcon scaledCharacterImage = scaleImageIcon(currentScene.getCharacterImage(), CHARACTER_WIDTH, CHARACTER_HEIGHT);
-            characterImageLabel.setIcon(scaledCharacterImage);
+            characterImageLabel.setIcon(scaledCharacterImage); // 크기 조정된 이미지 설정
             characterImageLabel.setVisible(currentScene.getCharacterImage() != null);
 
-            // 예외 처리가 안되어 있다.
-            // 대화 내용이 없을 경우 대화 상자가 없어야 한다.
+            // 대화 텍스트 업데이트
             String dialogue = currentScene.getDialogue();
             if (dialogue != null && !dialogue.trim().isEmpty()) {
+                // HTML 태그를 추가하여 줄바꿈 지원
                 dialogue = "<html>" + dialogue.replace("\n", "<br>") + "</html>";
                 dialogueText.setText(dialogue);
                 dialogueText.setVisible(true);
             } else {
                 dialogueText.setVisible(false);
             }
-            boolean hasDialogue = dialogue != null && !dialogue.trim().isEmpty();
+            // 대화 내용 유무에따른 대화 상자, 버튼 유무 결정
+            boolean hasDialogue = dialogue != null && !dialogue.trim().isEmpty(); // 대화 내용이 있다면 대화 상자, 다음 버튼 표시
+            dialogueBox.setVisible(hasDialogue); // 대화 상자를 숨기거나 표시
+            nextBtn.setVisible(hasDialogue); // "다음" 버튼을 숨기거나 표시
 
-            dialogueBox.setVisible(hasDialogue);
-            nextBtn.setVisible(hasDialogue);
-
-            backgroundImage.setIcon(currentScene.getBackgroundImage());
+            centerBackgroundImage(currentScene.getBackgroundImage());
+//            backgroundImage.setIcon(currentScene.getBackgroundImage());
 
             currentSceneIndex++;
         } else {
@@ -148,9 +164,30 @@ public abstract class BaseStage extends JFrame {
         }
     }
 
+    // 헬퍼 메서드: ImageIcon을 지정된 크기로 조정
     private ImageIcon scaleImageIcon(ImageIcon icon, int width, int height) {
-        if (icon == null) return null;
+        if (icon == null) return null; // 이미지가 없을 경우 null 반환
         Image scaledImage = icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
-        return new ImageIcon(scaledImage);
+        return new ImageIcon(scaledImage); // 조정된 Image를 새로운 ImageIcon으로 반환
+    }
+
+    // 헬퍼 메서드: 배경 이미지를 원본 크기로 중앙에 배치
+    private void centerBackgroundImage(ImageIcon icon) {
+        if (icon == null) {
+            backgroundImage.setIcon(null); // 이미지가 없으면 비우기
+            return;
+        }
+
+        // 원본 이미지 크기를 가져옴
+        int imageWidth = icon.getIconWidth();
+        int imageHeight = icon.getIconHeight();
+
+        // 중앙 좌표 계산
+        int x = (WINDOW_WIDTH - imageWidth) / 2;
+        int y = (WINDOW_HEIGHT - imageHeight) / 2;
+
+        // 이미지 설정 및 위치 지정
+        backgroundImage.setIcon(icon);
+        backgroundImage.setBounds(x, y, imageWidth, imageHeight);
     }
 }
