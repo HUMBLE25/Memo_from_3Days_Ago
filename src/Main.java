@@ -34,7 +34,6 @@ public class Main extends JFrame{
         Stage1 stage1 = new Stage1();
         // Stage 2
         Stage2 stage2 = new Stage2();
-        stage2.run();
 
         // Stage 3
         Stage3 stage3 = new Stage3();

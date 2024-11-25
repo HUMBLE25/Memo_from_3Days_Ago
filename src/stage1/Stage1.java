@@ -3,107 +3,9 @@ package stage1;
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
+import common.*;
 
-// SceneData: 각 장면에 필요한 데이터를 저장하는 클래스
-class SceneData {
-    private String profileName; // 프로필 이름 (장면에 표시되는 캐릭터 이름)
-    private ImageIcon profileImage; // 프로필 이미지 (캐릭터 초상화)
-    private String dialogue; // 대화 텍스트 (장면에 표시되는 대사)
-    private ImageIcon characterImage; // 캐릭터 이미지 (장면에 등장하는 캐릭터의 전체 이미지)
-    private ImageIcon backgroundImage; // 배경 이미지 (장면의 배경을 표현하는 이미지)
 
-    // 생성자: SceneData 객체 초기화
-    public SceneData(String profileName, ImageIcon profileImage, String dialogue,
-                     ImageIcon characterImage, ImageIcon backgroundImage) {
-        this.profileName = profileName;
-        this.profileImage = profileImage;
-        this.dialogue = dialogue;
-        this.characterImage = characterImage;
-        this.backgroundImage = backgroundImage;
-    }
-
-    // Getter 메서드: 각 필드 값 반환
-    public String getProfileName() {
-        return profileName;
-    }
-
-    public ImageIcon getProfileImage() {
-        return profileImage;
-    }
-
-    public String getDialogue() {
-        return dialogue;
-    }
-
-    public ImageIcon getCharacterImage() {
-        return characterImage;
-    }
-
-    public ImageIcon getBackgroundImage() {
-        return backgroundImage;
-    }
-}
-
-// DialogueBoxListener: 대화 상자와 상호작용할 수 있는 리스너
-// 마우스 클릭 또는 특정 키 입력(Space, Enter)에 반응하여 다음 장면으로 이동
-class DialogueBoxListener extends KeyAdapter implements MouseListener {
-    private Runnable updateScene; // 다음 장면으로 이동하기 위한 동작을 정의한 Runnable 객체
-
-    public DialogueBoxListener(Runnable updateScene) {
-        this.updateScene = updateScene;
-    }
-
-    @Override
-    public void keyPressed(KeyEvent e) {
-        // Spacebar 또는 Enter 키 입력 시 다음 장면으로 이동
-        if (e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER) {
-            moveToNextScene();
-        }
-    }
-
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        // 대화 상자 클릭 시 다음 장면으로 이동
-        moveToNextScene();
-    }
-
-    // 다음 장면으로 이동하는 메서드
-    private void moveToNextScene() {
-        SwingUtilities.invokeLater(updateScene); // UI 업데이트를 안전하게 수행
-    }
-
-    // 필요하지 않은 MouseListener 메서드들 구현 (빈 상태)
-    @Override public void mousePressed(MouseEvent e) {}
-    @Override public void mouseReleased(MouseEvent e) {}
-    @Override public void mouseEntered(MouseEvent e) {}
-    @Override public void mouseExited(MouseEvent e) {}
-}
-
-// BlinkingBtnRunnable: "다음" 버튼이 깜박이도록 하는 스레드
-class BlinkingBtnRunnable implements Runnable {
-    private JLabel nextBtn; // "다음" 버튼 컴포넌트
-    private boolean visible = true; // 버튼 가시성 상태
-
-    public BlinkingBtnRunnable(JLabel nextBtn) {
-        this.nextBtn = nextBtn;
-    }
-
-    @Override
-    public void run() {
-        while (true) {
-            // 버튼 가시성을 토글 (UI 스레드에서 실행)
-            SwingUtilities.invokeLater(() -> nextBtn.setVisible(visible));
-            visible = !visible;
-
-            try {
-                Thread.sleep(500); // 0.5초 간격으로 가시성 변경
-            } catch (InterruptedException e) {
-                Thread.currentThread().interrupt(); // 스레드가 중단되면 안전하게 종료
-                return;
-            }
-        }
-    }
-}
 
 // Stage1: 게임의 한 스테이지를 구성하는 메인 클래스
 public class Stage1 extends JFrame {
@@ -190,101 +92,7 @@ public class Stage1 extends JFrame {
 
     // 스토리 데이터를 초기화하는 메서드
     private void initStoryData() {
-        storyData = new SceneData[]{
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"),
-                        "먼저 사교관에서 성하의 흔적들을 찾아보자", null, null),
-                new SceneData(null, null, null,
-                        null, new ImageIcon("images/stage1/학교.png")),
-                new SceneData(null, null, null,
-                        null, new ImageIcon("images/stage1/사물함_1.png")),
-                new SceneData(null, null, null,
-                        null, new ImageIcon("images/stage1/사물함_2.png")),
-                // 무엇을 클릭하던지 문성하것 부터 보도록 함. 11.25 보고서 제출이후 수정할 계획
-                // 문성하 사물함 탐색
-                new SceneData(null, null, null,
-                        null, new ImageIcon("images/stage1/문성하_사물함/문성하_0.png")),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "전명호는 우리 대학 최초로 청림 신춘문예 대상에 이름을 올려 졸업 전에 등단을 준비하는 선배이다. 이 일로 우리 학교가 기사에 많이 오르내리고 교수가 매우 좋아했던 걸로 기억한다.",
-                        null, new ImageIcon("images/stage1/문성하_사물함/문성하_1.png")),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "평소 그렇게 두각을 보이는 선배라는 생각은 안 했어서 역시 창작은 평소 실력과는 관련이 없을 것이라고 생각했던 기억이 있다.",
-                        null, new ImageIcon("images/stage1/문성하_사물함/문성하_1.png")),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "하지만 왜 성하가 이 선배의 기사를 왜 이렇게 많이 스크랩 해둔 걸까? 그것도 이렇게 구기고 찢어진 상태로.",
-                        null, new ImageIcon("images/stage1/문성하_사물함/문성하_1.png")),
-
-                // 전명호 사물함 탐색
-                new SceneData(null, null, null,
-                        null, new ImageIcon("images/stage1/사물함_2.png")),
-                new SceneData(null, null, null,
-                        null, new ImageIcon("images/stage1/전명호_사물함/전명호_0.png")),
-                new SceneData(null, null, null,
-                        null, new ImageIcon("images/stage1/전명호_사물함/전명호_1.png")),
-                new SceneData("명지훈",  new ImageIcon("images/characters/프_지훈.png"), "이건 전명호 선배가 대회를 준비했던 당시 작성한 보고서들같다.",
-                        null, new ImageIcon("images/stage1/문성하_사물함/문성하_1.png")),
-                new SceneData("명지훈",  new ImageIcon("images/characters/프_지훈.png"), "2년이나 준비해서 그렇게 큰 상을 탈 수 있었겠지.",
-                        null, new ImageIcon("images/stage1/문성하_사물함/문성하_1.png")),
-
-                //천지호와의 만남
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "어, 저 사람은....",
-                        null, new ImageIcon("images/stage1/문성하_사물함/문성하_1.png")),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "지호다. 성하가 죽기 전부터 꽤 오랫동안 성하와 붙어지낸 친구다.",
-                        null, new ImageIcon("images/stage1/문성하_사물함/문성하_1.png")),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "친한 친구가 죽어서 그런지 모습이 많이 달라져 있었다. 원래 굉장히 깔끔하고 잘생긴 친구라서 학교 내에서 인기가 많았던 친구인데..",
-                        null, null),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "친한 친구가 죽어서 그런지 모습이 많이 달라져 있었다. 원래 굉장히 깔끔하고 잘생긴 친구라서 학교 내에서 인기가 많았던 친구인데..",
-                        new ImageIcon("images/characters/천지호_앞.png"), null),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "............",
-                        new ImageIcon("images/characters/폐인지호.png"), null),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "..지호야.",
-                        new ImageIcon("images/characters/폐인지호.png"), null),
-                new SceneData("천지호", new ImageIcon("images/characters/프_지호.png"), "아.. 지훈이구나.",
-                        new ImageIcon("images/characters/폐인지호.png"), null),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "..소식 들었지?",
-                        new ImageIcon("images/characters/폐인지호.png"), null),
-                new SceneData("천지호", new ImageIcon("images/characters/프_지호.png"), "......",
-                        new ImageIcon("images/characters/폐인지호.png"), null),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "사실 너한테 물어보고 싶은게 있어.",
-                        new ImageIcon("images/characters/폐인지호.png"), null),
-                new SceneData("천지호", new ImageIcon("images/characters/프_지호.png"), "......",
-                        new ImageIcon("images/characters/폐인지호.png"), null),
-                new SceneData("천지호", new ImageIcon("images/characters/프_지호.png"), ".....지훈아.",
-                        new ImageIcon("images/characters/폐인지호.png"), null),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "응.",
-                        new ImageIcon("images/characters/폐인지호.png"), null),
-                new SceneData("천지호", new ImageIcon("images/characters/프_지호.png"), "미안한데 나 그 얘기 하고 싶지 않아.",
-                        new ImageIcon("images/characters/폐인지호.png"), null),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "아....",
-                        new ImageIcon("images/characters/폐인지호.png"), null),
-                new SceneData("천지호", new ImageIcon("images/characters/프_지호.png"), "...나중에 보자.",
-                        new ImageIcon("images/characters/폐인지호.png"), null),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "역시 가장 친하던 친구가 갑자기 죽었다면 피폐해질만 하지....",
-                        new ImageIcon("images/characters/폐인지호.png"), null),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "다음은 옥상을 가보자.",
-                        new ImageIcon("images/characters/폐인지호.png"), null),
-                new SceneData(null, null, null,
-                        null, new ImageIcon("images/stage1/옥상.png")),
-                new SceneData("경비", new ImageIcon("images/characters/프_경비.png"), "허허.. 지금은 안 되지. 문창과 학생이라면 소식 들어서 알지 않나. 지금은 아무나 올라 갈수 없어요.",
-                        new ImageIcon("images/characters/경비.png"), null),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "제가 꼭 확인하고 싶은 게 있어서 그래요.. 한 번만 눈 감아주시면 안 될까요?",
-                        new ImageIcon("images/characters/명지훈_오른쪽.png"), null),
-                new SceneData("경비", new ImageIcon("images/characters/프_경비.png"), "이건 학생을 위해서도 안 된다고 하는 걸세. 옥상에 출입할 수 있는 사람이 나밖에 없어서 나도 이번에 진술하느라 얼마나 힘들었는지 몰라. 지금 들어가면 학생 괜한 의심 살 수도 있어.",
-                        new ImageIcon("images/characters/경비.png"), null),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "아...",
-                        new ImageIcon("images/characters/명지훈_오른쪽.png"), null),
-                new SceneData("경비", new ImageIcon("images/characters/프_경비.png"), "나도 참.. 하필 그 날에 열쇠를 잃어버려서.",
-                        new ImageIcon("images/characters/경비.png"), null),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "네? 잃어버리셨다고요?",
-                        new ImageIcon("images/characters/명지훈_오른쪽.png"), null),
-                new SceneData("경비", new ImageIcon("images/characters/프_경비.png"), "잘 기억은 안 나지만 그날 옥상 열쇠만 사라졌지 뭔가. 원래 학생들 가져갈 수 있게 작게 열어두는 문을 잠구고 퇴근한 거 같은데 열려있었어. 재수도 참 없지.",
-                        new ImageIcon("images/characters/경비.png"), null),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "..이게 우연일 리가 없다.",
-                        new ImageIcon("images/characters/명지훈_오른쪽.png"), null),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "감사합니다, 아저씨.",
-                        new ImageIcon("images/characters/명지훈_오른쪽.png"), null),
-                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "다음으로 성하의 기숙사를 가 보자.",
-                        new ImageIcon("images/characters/명지훈_오른쪽.png"), null),
-                new SceneData(null, null, null,
-                        null, new ImageIcon("images/stage1/지도.png")),
-
-        };
+        storyData = Stage1Data.getScenes();
     }
     // 헬퍼 메서드: ImageIcon을 지정된 크기로 조정
     private ImageIcon scaleImageIcon(ImageIcon icon, int width, int height) {
@@ -404,10 +212,6 @@ public class Stage1 extends JFrame {
             characterImageLabel.setVisible(currentScene.getCharacterImage() != null);
 
             // 대화 텍스트 업데이트
-//            String dialogue = currentScene.getDialogue();
-//            if (dialogue != null && dialogue.trim().isEmpty()) {
-//                dialogue = " "; // 공백으로 설정하여 출력 강제
-//            }
             String dialogue = currentScene.getDialogue();
             if (dialogue != null && !dialogue.trim().isEmpty()) {
                 // HTML 태그를 추가하여 줄바꿈 지원
@@ -425,8 +229,6 @@ public class Stage1 extends JFrame {
             // 배경 이미지 업데이트
             // 배경 이미지 업데이트 및 중앙 배치
             centerBackgroundImage(currentScene.getBackgroundImage());
-//            backgroundImage.setIcon(currentScene.getBackgroundImage());
-
             // 다음 장면으로 이동하기 위해 인덱스 증가
             currentSceneIndex++;
         } else {

@@ -1,8 +1,12 @@
 package stage2;
 
-public class Stage2 {
-    public void run() {
-        System.out.println("Stage 2 Running...");
+import java.awt.*;
+import java.awt.event.*;
+import javax.swing.*;
+
+public class Stage2 extends JFrame{
+    public static void main(String[] args) {
+        new Stage2();
     }
 
 }

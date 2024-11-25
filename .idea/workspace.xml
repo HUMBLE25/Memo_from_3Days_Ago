@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="50ca8883-6113-4291-86a0-079e05297edb" name="Changes" comment="" />
+    <list default="true" id="50ca8883-6113-4291-86a0-079e05297edb" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/common/BlinkingBtnRunnable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/DialogueBoxListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/common/SceneData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stage1/Stage1Data.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stage1/Stage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stage1/Stage1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/stage2/Stage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stage2/Stage2.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -59,7 +68,7 @@
     "Application.Stage1.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "gyeom/stage1",
+    "git-widget-placeholder": "gyeom/stage2",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "/Users/kimjingyeom/IdeaProjects/Memo_from_3_Days _Ago/images/characters",
     "onboarding.tips.debug.path": "/Users/kimjingyeom/IdeaProjects/Memo_from_3_Days _Ago/src/Main.java",
