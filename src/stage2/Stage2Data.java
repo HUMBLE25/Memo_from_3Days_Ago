@@ -65,13 +65,6 @@ public class Stage2Data {
                         "이제 김도진, 마혜진의 관계를 찾기 위해 예체능관에 가보자.", null,null),
                 new SceneData(null,  null,
                         null, null,new ImageIcon("images/stage2/지도.png")),
-
-
-
-
-
-
-
         };
     }
 }

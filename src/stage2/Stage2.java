@@ -14,7 +14,8 @@ public class Stage2 extends BaseStage {
         // 대화 장면 생성
         JPanel dialogueScene = createDialogueScene();
         mainPanel.add(dialogueScene, "DialogueScene");
-        setVisible(true);
+
+        setVisible(true); // 윈도우 표시
 
         // 첫번째 장면 표시
         updateScene();
@@ -22,7 +23,7 @@ public class Stage2 extends BaseStage {
 
     @Override
     protected void initStoryData() {
-        // 배경 이미지가 보이지 않는다.
+
         // Stage?Data이 부분들만 내용을 삽입해주면 된다.
         storyData = Stage2Data.getScenes();
     }

@@ -33,15 +33,13 @@ public abstract class BaseStage extends JFrame {
     public BaseStage(String title) {
         setTitle(title);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+        setSize(WINDOW_WIDTH, WINDOW_HEIGHT); // 윈도우 크기 설정
 
         cardLayout = new CardLayout();
         mainPanel = new JPanel(cardLayout);
 
-        add(mainPanel);
-        initializeComponents();
-
-
+        add(mainPanel); // 메인 패널을 JFrame에 추가
+        initializeComponents(); // 모든 컴포넌트 초기화
     }
 
     private void initializeComponents() {
