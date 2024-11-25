@@ -113,7 +113,7 @@ public class Stage1 extends JFrame {
     // UI 컴포넌트 (대화 장면에서 사용하는 요소들)
     private JLabel profileNameLabel; // 캐릭터 이름
     private JLabel profileImageLabel; // 캐릭터 프로필 이미지
-    private JTextArea dialogueText; // 대화 텍스트
+    private JLabel dialogueText; // 대화 텍스트
     private JLabel characterImageLabel; // 캐릭터 전체 이미지
     private JLabel backgroundImage; // 배경 이미지
     private JPanel dialogueBox;
@@ -192,7 +192,7 @@ public class Stage1 extends JFrame {
     private void initStoryData() {
         storyData = new SceneData[]{
                 new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"),
-                        "먼저 사교관에서 성하의 흔적들을 찾아보자.", null, null),
+                        "먼저 사교관에서 성하의 흔적들을 찾아보자", null, null),
                 new SceneData(null, null, null,
                         null, new ImageIcon("images/stage1/학교.png")),
                 new SceneData(null, null, null,
@@ -200,13 +200,39 @@ public class Stage1 extends JFrame {
                 new SceneData(null, null, null,
                         null, new ImageIcon("images/stage1/사물함_2.png")),
                 // 무엇을 클릭하던지 문성하것 부터 보도록 함. 11.25 보고서 제출이후 수정할 계획
+                // 문성하 사물함 탐색
                 new SceneData(null, null, null,
                         null, new ImageIcon("images/stage1/문성하_사물함/문성하_0.png")),
                 new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "전명호는 우리 대학 최초로 청림 신춘문예 대상에 이름을 올려 졸업 전에 등단을 준비하는 선배이다. 이 일로 우리 학교가 기사에 많이 오르내리고 교수가 매우 좋아했던 걸로 기억한다.",
                         null, new ImageIcon("images/stage1/문성하_사물함/문성하_1.png")),
+                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "평소 그렇게 두각을 보이는 선배라는 생각은 안 했어서 역시 창작은 평소 실력과는 관련이 없을 것이라고 생각했던 기억이 있다.",
+                        null, new ImageIcon("images/stage1/문성하_사물함/문성하_1.png")),
+                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "하지만 왜 성하가 이 선배의 기사를 왜 이렇게 많이 스크랩 해둔 걸까? 그것도 이렇게 구기고 찢어진 상태로.",
+                        null, new ImageIcon("images/stage1/문성하_사물함/문성하_1.png")),
 
+                // 전명호 사물함 탐색
                 new SceneData(null, null, null,
                         null, new ImageIcon("images/stage1/사물함_2.png")),
+                new SceneData(null, null, null,
+                        null, new ImageIcon("images/stage1/전명호_사물함/전명호_0.png")),
+                new SceneData(null, null, null,
+                        null, new ImageIcon("images/stage1/전명호_사물함/전명호_1.png")),
+                new SceneData("명지훈",  new ImageIcon("images/characters/프_지훈.png"), "이건 전명호 선배가 대회를 준비했던 당시 작성한 보고서들같다.",
+                        null, new ImageIcon("images/stage1/문성하_사물함/문성하_1.png")),
+                new SceneData("명지훈",  new ImageIcon("images/characters/프_지훈.png"), "2년이나 준비해서 그렇게 큰 상을 탈 수 있었겠지.",
+                        null, new ImageIcon("images/stage1/문성하_사물함/문성하_1.png")),
+
+                //천지호와의 만남
+                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "어, 저 사람은....",
+                        null, new ImageIcon("images/stage1/문성하_사물함/문성하_1.png")),
+                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "지호다. 성하가 죽기 전부터 꽤 오랫동안 성하와 붙어지낸 친구다.",
+                        null, new ImageIcon("images/stage1/문성하_사물함/문성하_1.png")),
+                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "친한 친구가 죽어서 그런지 모습이 많이 달라져 있었다. 원래 굉장히 깔끔하고 잘생긴 친구라서 학교 내에서 인기가 많았던 친구인데..",
+                        null, null),
+                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "친한 친구가 죽어서 그런지 모습이 많이 달라져 있었다. 원래 굉장히 깔끔하고 잘생긴 친구라서 학교 내에서 인기가 많았던 친구인데..",
+                        new ImageIcon("images/characters/천지호_앞.png"), null),
+                new SceneData("명지훈", new ImageIcon("images/characters/프_지훈.png"), "............",
+                        new ImageIcon("images/characters/폐인지호.png"), null),
         };
     }
     // 헬퍼 메서드: ImageIcon을 지정된 크기로 조정
@@ -265,15 +291,16 @@ public class Stage1 extends JFrame {
         dialogueBox.setBounds(DIALOGUE_BOX_X,DIALOGUE_BOX_Y,DIALOGUE_BOX_WIDTH,DIALOGUE_BOX_HEIGHT);
 
         // 대화 텍스트 설정
-        dialogueText = new JTextArea();
+        dialogueText = new JLabel();
         dialogueText.setFont(new Font("VT323", Font.PLAIN, 36));
         dialogueText.setForeground(Color.WHITE);
         dialogueText.setBackground(new Color(0x333C41)); // 배경색을 대화 상자와 일치
-        dialogueText.setLineWrap(true); // 줄바꿈 활성화
-        dialogueText.setWrapStyleWord(true); // 단어 단위로 줄바꿈
-        dialogueText.setMargin(new Insets(10, 10, 15, 10)); // 텍스트 패딩으로 line-height처럼 설정
-        dialogueText.setEditable(false); // 편집불가
+//        dialogueText.setLineWrap(true); // 줄바꿈 활성화
+//        dialogueText.setWrapStyleWord(false); // 단어 단위로 줄바꿈
+//        dialogueText.setMargin(new Insets(10, 10, 15, 10)); // 텍스트 패딩으로 line-height처럼 설정
+//        dialogueText.setEditable(false); // 편집불가
         dialogueText.setBounds(DIALOGUE_TEXT_X, DIALOGUE_TEXT_Y, DIALOGUE_TEXT_WIDTH, DIALOGUE_TEXT_HEIGHT);
+        dialogueText.setVerticalAlignment(SwingConstants.TOP); // 텍스트를 상단 정렬
         dialogueBox.add(dialogueText);
 
         // "다음" 버튼 설정
@@ -326,8 +353,21 @@ public class Stage1 extends JFrame {
             characterImageLabel.setVisible(currentScene.getCharacterImage() != null);
 
             // 대화 텍스트 업데이트
-            dialogueText.setText(currentScene.getDialogue());
-            boolean hasDialogue = currentScene.getDialogue() != null;
+//            String dialogue = currentScene.getDialogue();
+//            if (dialogue != null && dialogue.trim().isEmpty()) {
+//                dialogue = " "; // 공백으로 설정하여 출력 강제
+//            }
+            String dialogue = currentScene.getDialogue();
+            if (dialogue != null && !dialogue.trim().isEmpty()) {
+                // HTML 태그를 추가하여 줄바꿈 지원
+                dialogue = "<html>" + dialogue.replace("\n", "<br>") + "</html>";
+                dialogueText.setText(dialogue);
+                dialogueText.setVisible(true);
+            } else {
+                dialogueText.setVisible(false);
+            }
+//            dialogueText.setText(dialogue);
+            boolean hasDialogue = dialogue != null && !dialogue.trim().isEmpty();
             dialogueBox.setVisible(hasDialogue); // 대화 상자를 숨기거나 표시
             nextBtn.setVisible(hasDialogue); // "다음" 버튼을 숨기거나 표시
 
@@ -340,7 +380,7 @@ public class Stage1 extends JFrame {
             currentSceneIndex++;
         } else {
             // 모든 장면이 끝났을 때
-            System.out.println("스토리가 끝났습니다!");
+            System.out.println("🫠🫠🫠🫠스토리가 끝났어요!🫠🫠🫠🫠");
         }
     }
 
