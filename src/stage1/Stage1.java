@@ -5,8 +5,6 @@ import java.awt.event.*;
 import javax.swing.*;
 import common.*;
 
-
-
 // Stage1: 게임의 한 스테이지를 구성하는 메인 클래스
 public class Stage1 extends JFrame {
     private CardLayout cardLayout; // 장면 전환을 위한 레이아웃 관리자
@@ -229,6 +227,8 @@ public class Stage1 extends JFrame {
             // 배경 이미지 업데이트
             // 배경 이미지 업데이트 및 중앙 배치
             centerBackgroundImage(currentScene.getBackgroundImage());
+//            backgroundImage.setIcon(currentScene.getBackgroundImage());
+
             // 다음 장면으로 이동하기 위해 인덱스 증가
             currentSceneIndex++;
         } else {

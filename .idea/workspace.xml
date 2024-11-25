@@ -5,12 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="50ca8883-6113-4291-86a0-079e05297edb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/common/BlinkingBtnRunnable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/DialogueBoxListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/common/SceneData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/stage1/Stage1Data.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/stage2/Stage2Data.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stage1/Stage1.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stage1/Stage1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/stage2/Stage2.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/stage2/Stage2.java" afterDir="false" />
     </list>
@@ -66,6 +62,7 @@
   "keyToString": {
     "Application.Main.executor": "Run",
     "Application.Stage1.executor": "Run",
+    "Application.Stage2.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "gyeom/stage2",
@@ -81,7 +78,7 @@
       <recent name="$PROJECT_DIR$" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Stage1">
+  <component name="RunManager" selected="Application.Stage2">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="Memo_from_3_Days _Ago" />
@@ -102,8 +99,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Stage2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="stage2.Stage2" />
+      <module name="Memo_from_3_Days _Ago" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="stage2.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Stage2" />
         <item itemvalue="Application.Stage1" />
         <item itemvalue="Application.Main" />
       </list>
