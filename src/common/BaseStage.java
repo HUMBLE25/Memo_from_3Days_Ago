@@ -1,5 +1,7 @@
 package common;
 
+import stage2.Stage2;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,6 +10,7 @@ public abstract class BaseStage extends JFrame {
     protected JPanel mainPanel;
 
     // UI 컴포넌트
+    protected JPanel dialogueScene; // 대화 장면, 바탕이 되는 JPanel
     protected JLabel profileNameLabel;
     protected JLabel profileImageLabel;
     protected JLabel dialogueText;
@@ -29,7 +32,7 @@ public abstract class BaseStage extends JFrame {
 
     protected JLabel nextBtn;
     protected ImageIcon nextBtnImg = new ImageIcon("images/characters/다음버튼.png");
-
+    DialogueBoxListener listener = new DialogueBoxListener(this::updateScene);
     public BaseStage(String title) {
         setTitle(title);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -85,7 +88,7 @@ public abstract class BaseStage extends JFrame {
 
     protected JPanel createDialogueScene() {
         // 대화 장면 설정
-        JPanel dialogueScene = new JPanel(null);
+        dialogueScene = new JPanel(null);
         dialogueScene.setBackground(Color.BLACK);
 
         // 프로필 이름 붙이기
@@ -104,7 +107,7 @@ public abstract class BaseStage extends JFrame {
         dialogueScene.add(backgroundImage);
 
         // 리스너 설정
-        DialogueBoxListener listener = new DialogueBoxListener(this::updateScene);
+//        DialogueBoxListener listener = new DialogueBoxListener(this::updateScene);
         dialogueScene.addMouseListener(listener);
         dialogueScene.addKeyListener(listener);
         dialogueScene.setFocusable(true);
@@ -148,17 +151,23 @@ public abstract class BaseStage extends JFrame {
             } else {
                 dialogueText.setVisible(false);
             }
+
             // 대화 내용 유무에따른 대화 상자, 버튼 유무 결정
             boolean hasDialogue = dialogue != null && !dialogue.trim().isEmpty(); // 대화 내용이 있다면 대화 상자, 다음 버튼 표시
             dialogueBox.setVisible(hasDialogue); // 대화 상자를 숨기거나 표시
             nextBtn.setVisible(hasDialogue); // "다음" 버튼을 숨기거나 표시
 
+
             centerBackgroundImage(currentScene.getBackgroundImage());
-//            backgroundImage.setIcon(currentScene.getBackgroundImage());
+
+            // 새로 등록되는 리스너가 있는 경우
+//            dialogueScene.removeMouseListener(listener); // 등록된 리스너를 지울 수 있으며, 새로운 리스너를 등록할 수 있다.
 
             currentSceneIndex++;
         } else {
             System.out.println("스토리가 끝났습니다!");
+            // 가능하다. 오버라이딩을 할 수 있나..
+            new Stage2();
         }
     }
 

@@ -23,7 +23,6 @@ public class Stage1 extends BaseStage {
 
     @Override
     protected void initStoryData() {
-
         // Stage?Data이 부분들만 내용을 삽입해주면 된다.
         // Stage1Data에 데이터를 삽입하면 된다.
         // Stage1Data에 데이터를 참조하여 자동으로 불러온다.
