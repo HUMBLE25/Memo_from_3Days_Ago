@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Stage3 extends JFrame{
-    String[] texts = {
+    public String[] texts = {
                 "일단 김도진을 만나야 한다.",
                 "아마 체육관에 있지 않을까.."
     };
