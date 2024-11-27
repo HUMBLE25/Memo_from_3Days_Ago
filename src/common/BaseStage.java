@@ -14,7 +14,8 @@ public abstract class BaseStage extends JFrame {
     protected JLabel profileNameLabel;
     protected JLabel profileImageLabel;
     protected JLabel dialogueText;
-    protected JLabel characterImageLabel;
+    protected JLabel mainCharacterImageLabel;
+    protected JLabel subCharacterImageLabel;
     protected JLabel backgroundImage;
     protected JPanel dialogueBox;
     protected SceneData[] storyData;
@@ -27,7 +28,7 @@ public abstract class BaseStage extends JFrame {
     protected static final int NAME_X = 242, NAME_Y = 628, NAME_WIDTH = 133, NAME_HEIGHT = 48;
     protected static final int DIALOGUE_BOX_X = 42, DIALOGUE_BOX_Y = 737, DIALOGUE_BOX_WIDTH = 1356, DIALOGUE_BOX_HEIGHT = 245;
     protected static final int DIALOGUE_TEXT_X = 20, DIALOGUE_TEXT_Y = 20, DIALOGUE_TEXT_WIDTH = 1300, DIALOGUE_TEXT_HEIGHT = 200;
-    protected static final int CHARACTER_X = 916, CHARACTER_Y = 101, CHARACTER_WIDTH = 410, CHARACTER_HEIGHT = 1130;
+    protected static final int CHARACTER_X = 916, CHARACTER_Y = 101, CHARACTER_WIDTH = 410, CHARACTER_HEIGHT = 1130, SUB_CHARACTER_X =274;
     protected static final int NEXTBTN_X = 1279, NEXTBTN_Y = 160, NEXTBTN_WIDTH = 45, NEXTBTN_HEIGHT = 45;
 
     protected JLabel nextBtn;
@@ -56,9 +57,13 @@ public abstract class BaseStage extends JFrame {
         profileImageLabel = new JLabel();
         profileImageLabel.setBounds(PROFILE_X, PROFILE_Y, PROFILE_WIDTH, PROFILE_HEIGHT);
 
-        // 캐릭터 이미지 설정
-        characterImageLabel = new JLabel();
-        characterImageLabel.setBounds(CHARACTER_X, CHARACTER_Y, CHARACTER_WIDTH, CHARACTER_HEIGHT);
+        // 메인 캐릭터 이미지 설정
+        mainCharacterImageLabel = new JLabel();
+        mainCharacterImageLabel.setBounds(CHARACTER_X, CHARACTER_Y, CHARACTER_WIDTH, CHARACTER_HEIGHT);
+
+        // 서브 캐릭터 이미지 설정
+        subCharacterImageLabel = new JLabel();
+        subCharacterImageLabel.setBounds(274, CHARACTER_Y, CHARACTER_WIDTH, CHARACTER_HEIGHT);
 
         // 대화 상자 설정
         dialogueBox = new JPanel(null);
@@ -97,8 +102,11 @@ public abstract class BaseStage extends JFrame {
         // 프로필 이미지 붙이기
         dialogueScene.add(profileImageLabel);
 
-        // 캐릭터 이미지 붙이기
-        dialogueScene.add(characterImageLabel);
+        // 메인 캐릭터 이미지 붙이기
+        dialogueScene.add(mainCharacterImageLabel);
+
+        // 서브 캐릭터 이미지 붙이기
+        dialogueScene.add(subCharacterImageLabel);
 
         // 대화 상자 붙이기
         dialogueScene.add(dialogueBox);
@@ -117,7 +125,8 @@ public abstract class BaseStage extends JFrame {
         SwingUtilities.invokeLater(() -> {
             dialogueBox.setComponentZOrder(nextBtn,0); // "다음" 버튼을 대화 상자 위에 표시
             dialogueScene.setComponentZOrder(dialogueBox, 1); // 대화 상자를 두 번째 표시
-            dialogueScene.setComponentZOrder(characterImageLabel, 2); // 캐릭터 이미지를 세 번째 표시
+            dialogueScene.setComponentZOrder(mainCharacterImageLabel, 2); // 캐릭터 이미지를 세 번째 표시
+            dialogueScene.setComponentZOrder(subCharacterImageLabel, 2); // 캐릭터 이미지를 세 번째 표시
         });
         return dialogueScene;
     }
@@ -137,9 +146,27 @@ public abstract class BaseStage extends JFrame {
             profileImageLabel.setVisible(currentScene.getProfileImage() != null);
 
             // 캐릭터 이미지 업데이트
-            ImageIcon scaledCharacterImage = scaleImageIcon(currentScene.getCharacterImage(), CHARACTER_WIDTH, CHARACTER_HEIGHT);
-            characterImageLabel.setIcon(scaledCharacterImage); // 크기 조정된 이미지 설정
-            characterImageLabel.setVisible(currentScene.getCharacterImage() != null);
+            // mainCharacterImage만 받았을 경우와 subCharacterImage를 받았을 경우를 나누자.
+
+            ImageIcon checkSubCharacterImage = currentScene.getSubCharacterImage();
+            if (checkSubCharacterImage == null){
+                ImageIcon scaledCharacterImage = scaleImageIcon(currentScene.getMainCharacterImage(), CHARACTER_WIDTH, CHARACTER_HEIGHT);
+                mainCharacterImageLabel.setIcon(scaledCharacterImage); // 크기 조정된 이미지 설정
+                mainCharacterImageLabel.setVisible(currentScene.getMainCharacterImage() != null);
+            } else {
+                // 이때 둘의 간격을 정해두자.
+                // CHARACTER_X만 바꾸면 된다.
+                // MAIN_CHARACTER_X = 832
+                // SUB_CHARACTER_X = 274
+                ImageIcon scaledMainCharacterImage = scaleImageIcon(currentScene.getMainCharacterImage(), CHARACTER_WIDTH, CHARACTER_HEIGHT);
+                mainCharacterImageLabel.setIcon(scaledMainCharacterImage); // 크기 조정된 이미지 설정
+                mainCharacterImageLabel.setVisible(currentScene.getMainCharacterImage() != null);
+                mainCharacterImageLabel.setLocation(832,CHARACTER_Y);
+
+                ImageIcon scaledSubCharacterImage = scaleImageIcon(checkSubCharacterImage, CHARACTER_WIDTH, CHARACTER_HEIGHT);
+                subCharacterImageLabel.setIcon(scaledSubCharacterImage); // 크기 조정된 이미지 설정
+                subCharacterImageLabel.setVisible(currentScene.getMainCharacterImage() != null);
+            }
 
             // 대화 텍스트 업데이트
             String dialogue = currentScene.getDialogue();
@@ -157,7 +184,6 @@ public abstract class BaseStage extends JFrame {
             dialogueBox.setVisible(hasDialogue); // 대화 상자를 숨기거나 표시
             nextBtn.setVisible(hasDialogue); // "다음" 버튼을 숨기거나 표시
 
-
             centerBackgroundImage(currentScene.getBackgroundImage());
 
             // 새로 등록되는 리스너가 있는 경우
@@ -167,6 +193,7 @@ public abstract class BaseStage extends JFrame {
         } else {
             System.out.println("스토리가 끝났습니다!");
             // 가능하다. 오버라이딩을 할 수 있나..
+            // 문제는 프레임을 여러개 띄우개 된다. 프레임은 고정하고 데이터만 교체하는 방법을 생각해보자.
             new Stage2();
         }
     }
