@@ -33,9 +33,7 @@ public class SceneData {
         return dialogue;
     }
 
-    public ImageIcon getCharacterImage() {
-        return characterImage;
-    }
+    public ImageIcon getCharacterImage() {return characterImage;}
 
     public ImageIcon getBackgroundImage() {
         return backgroundImage;
