@@ -30,7 +30,7 @@ public class Stage4 extends BaseStage {
         storyData = Stage4Data.getAllScenes();
     }
     protected String getNextStageName(){
-        return "Stage4Scene";
+        return "EnginScene";
     }
 
     // Stage별 테스트를 위한 main 매서드 통합 이후 주석처리 혹은 삭제
