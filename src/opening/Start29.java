@@ -1,6 +1,6 @@
 package opening;
 
-import stage1.Stage1;
+//import stage1.Stage1;
 
 import javax.swing.*;
 import java.awt.*;
@@ -51,7 +51,7 @@ public class Start29 extends JFrame {
     }
     private void goToNextPage() {
         Start29.this.dispose();
-        new stage1.Stage1();
+//        new stage1.Stage1();
     }
     public static void main(String[] args) {
         new Start29();
