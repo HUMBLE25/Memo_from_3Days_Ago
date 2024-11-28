@@ -1,7 +1,6 @@
 package stage3;
 
 import common.BaseStage;
-import stage2.Stage2Data;
 
 import javax.swing.*;
 
@@ -26,7 +25,7 @@ public class Stage3 extends BaseStage {
     protected void initStoryData() {
 
         // Stage?Data이 부분들만 내용을 삽입해주면 된다.
-        storyData = Stage3Data.getScenes();
+        storyData = Stage3Data_ex.getScenes();
     }
 
     public static void main(String[] args) {
