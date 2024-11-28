@@ -61,10 +61,12 @@ public class SceneData {
         return dialogue;
     }
 
+
     // 캐릭터의 전체 이미지를 반환합니다.
     public ImageIcon getMainCharacterImage() {
         return mainCharacterImage;
     }
+
 
     public ImageIcon getSubCharacterImage() {
         return subCharacterImage;
