@@ -219,8 +219,8 @@ public class Stage1Data {
                 // 기타 장면 및 대화
                 new SceneData.Builder()
                         .setProfileName("명지훈")
+                        .setProfileImage(new ImageIcon("images/characters/프_지훈.png"))
                         .setDialogue("다음은 옥상을 가보자.")
-                        .setMainCharacterImage(new ImageIcon("images/characters/폐인지호.png"))
                         .build(),
 
                 new SceneData.Builder()

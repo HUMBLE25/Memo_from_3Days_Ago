@@ -4,9 +4,10 @@ import common.SceneData;
 import javax.swing.ImageIcon;
 
 public class Stage2Data {
-    public static SceneData[] getScenes() {
+    public static SceneData[] getIntroScenes(){
+        // Stage2Intro
+        // 학교 앞 장면
         return new SceneData[]{
-                // 학교 앞 장면
                 new SceneData.Builder()
                         .setBackgroundImage(new ImageIcon("images/stage2/학교앞장면.png"))
                         .build(),
@@ -15,13 +16,13 @@ public class Stage2Data {
                         .setProfileName("명지훈")
                         .setProfileImage(new ImageIcon("images/characters/프_지훈.png"))
                         .setDialogue("성하 방에 들어가보자.")
-                        .build(),
+                        .build()
+        };
+    }
 
-                // 성하 방 입장
-                new SceneData.Builder()
-                        .setBackgroundImage(new ImageIcon("images/stage2/성하_방.png"))
-                        .build(),
-
+    public static SceneData[] getDiaryStroyScenes(){
+        return new SceneData[]{
+                // 성하 일기장 선택 스토리
                 // 성하 일기장 선택
                 new SceneData.Builder()
                         .setProfileName("명지훈")
@@ -36,12 +37,12 @@ public class Stage2Data {
                         .setDialogue("표절이라.. 자세히 들은 건 없지만 아무래도 성하가 이번에 자살을 했다고 소문이 도는 이유가 이것 때문이 아닐까.")
                         .setBackgroundImage(new ImageIcon("images/stage2/성하_일기.png"))
                         .build(),
+        };
+    }
 
-                // 성하 방 둘러보기
-                new SceneData.Builder()
-                        .setBackgroundImage(new ImageIcon("images/stage2/성하_방.png"))
-                        .build(),
-
+    public static SceneData[] getPhoneStoryScenes(){
+        return new SceneData[]{
+                // 성하 휴대폰 선택 스토리
                 // 성하 휴대폰 선택
                 new SceneData.Builder()
                         .setProfileName("명지훈")
@@ -70,7 +71,12 @@ public class Stage2Data {
                         .setDialogue("... 김도진 ...마혜진 그리고 성하의 관계를 알아봐야겠다.")
                         .setBackgroundImage(new ImageIcon("images/stage2/휴대폰.png"))
                         .build(),
+        };
+    }
 
+    public static SceneData[] getPresentStoryScenes(){
+        return new SceneData[]{
+                // 선물 상자 선택 스토리
                 // 선물 상자 선택
                 new SceneData.Builder()
                         .setBackgroundImage(new ImageIcon("images/stage2/성하_방.png"))
@@ -108,7 +114,12 @@ public class Stage2Data {
                         .setProfileImage(new ImageIcon("images/characters/프_지훈.png"))
                         .setDialogue("좀 무섭긴 하지만 김도진을 찾아가봐야 할 것 같다.")
                         .build(),
+        };
+    }
 
+    public static SceneData[] getOutroScenes(){
+        return new SceneData[]{
+                // Stage2Outro
                 // 지호 방 입장
                 new SceneData.Builder()
                         .setProfileName("명지훈")
