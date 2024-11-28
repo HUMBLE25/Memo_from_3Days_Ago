@@ -1,6 +1,6 @@
 package opening;
 
-import stage1.Stage1;
+//import stage1.Stage1;
 
 import javax.swing.*;
 import java.awt.*;

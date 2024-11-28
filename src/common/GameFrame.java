@@ -1,6 +1,6 @@
 package common;
 
-import stage1.Stage1;
+import stage1.Stage1Intro;
 import stage2.Stage2;
 //import stage2.Stage2;
 
@@ -23,7 +23,7 @@ public class GameFrame extends JFrame {
         add(mainPanel);
 
         // 스테이지 추가
-        new Stage1(mainPanel, cardLayout);
+        new Stage1Intro(mainPanel, cardLayout);
         new Stage2(mainPanel, cardLayout);
 
         setVisible(true);
