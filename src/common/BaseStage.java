@@ -147,12 +147,13 @@ public abstract class BaseStage extends JPanel {
 
             // 캐릭터 이미지 업데이트
             // mainCharacterImage만 받았을 경우와 subCharacterImage를 받았을 경우를 나누자.
-
-            ImageIcon checkSubCharacterImage = currentScene.getSubCharacterImage();
-            if (checkSubCharacterImage == null){
+            // 서브 캐릭터 초기화가 안됨.
+            ImageIcon SubCharacterImage = currentScene.getSubCharacterImage();
+            if (SubCharacterImage == null){ // SubCharacterImage가 null 일 경우
                 ImageIcon scaledCharacterImage = scaleImageIcon(currentScene.getMainCharacterImage(), CHARACTER_WIDTH, CHARACTER_HEIGHT);
                 mainCharacterImageLabel.setIcon(scaledCharacterImage); // 크기 조정된 이미지 설정
-                mainCharacterImageLabel.setVisible(currentScene.getMainCharacterImage() != null);
+                mainCharacterImageLabel.setVisible(currentScene.getMainCharacterImage() != null); // null이면 false로 보이지 않는다.
+                subCharacterImageLabel.setVisible(currentScene.getSubCharacterImage() != null);
             } else {
                 // 이때 둘의 간격을 정해두자.
                 // CHARACTER_X만 바꾸면 된다.
@@ -163,9 +164,9 @@ public abstract class BaseStage extends JPanel {
                 mainCharacterImageLabel.setVisible(currentScene.getMainCharacterImage() != null);
                 mainCharacterImageLabel.setLocation(832,CHARACTER_Y);
 
-                ImageIcon scaledSubCharacterImage = scaleImageIcon(checkSubCharacterImage, CHARACTER_WIDTH, CHARACTER_HEIGHT);
+                ImageIcon scaledSubCharacterImage = scaleImageIcon(SubCharacterImage, CHARACTER_WIDTH, CHARACTER_HEIGHT);
                 subCharacterImageLabel.setIcon(scaledSubCharacterImage); // 크기 조정된 이미지 설정
-                subCharacterImageLabel.setVisible(currentScene.getMainCharacterImage() != null);
+                subCharacterImageLabel.setVisible(currentScene.getSubCharacterImage() != null);
             }
 
             // 대화 텍스트 업데이트
@@ -185,9 +186,6 @@ public abstract class BaseStage extends JPanel {
             nextBtn.setVisible(hasDialogue); // "다음" 버튼을 숨기거나 표시
 
             centerBackgroundImage(currentScene.getBackgroundImage());
-
-            // 새로 등록되는 리스너가 있는 경우
-//            dialogueScene.removeMouseListener(listener); // 등록된 리스너를 지울 수 있으며, 새로운 리스너를 등록할 수 있다.
 
             currentSceneIndex++;
         } else {

@@ -48,32 +48,36 @@ public class SceneData {
 
     // 캐릭터 이름을 반환합니다.
     public String getProfileName() {
+
         return profileName;
     }
 
     // 캐릭터의 프로필 이미지를 반환합니다.
     public ImageIcon getProfileImage() {
+
         return profileImage;
     }
 
     // 대화 텍스트를 반환합니다.
     public String getDialogue() {
+
         return dialogue;
     }
 
 
     // 캐릭터의 전체 이미지를 반환합니다.
     public ImageIcon getMainCharacterImage() {
+
         return mainCharacterImage;
     }
 
 
     public ImageIcon getSubCharacterImage() {
-        return subCharacterImage;
-    }
+        return subCharacterImage;}
 
     // 배경 이미지를 반환합니다.
     public ImageIcon getBackgroundImage() {
+
         return backgroundImage;
     }
 
@@ -135,7 +139,7 @@ public class SceneData {
          * @param subCharacterImage 캐릭터의 전체 이미지 (ImageIcon).
          * @return Builder 객체 자신을 반환하여 메서드 체이닝을 지원.
          */
-        public Builder subCharacterImage(ImageIcon subCharacterImage) {
+        public Builder setSubCharacterImage(ImageIcon subCharacterImage) {
             this.subCharacterImage = subCharacterImage;
             return this;
         }
@@ -154,6 +158,7 @@ public class SceneData {
          * @return 생성된 SceneData 객체.
          */
         public SceneData build() {
+
             return new SceneData(this);
         }
     }
