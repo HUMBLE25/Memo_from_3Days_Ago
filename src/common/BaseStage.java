@@ -1,11 +1,11 @@
 package common;
 
-import stage2.Stage2;
+//import stage2.Stage2;
 
 import javax.swing.*;
 import java.awt.*;
 
-public abstract class BaseStage extends JFrame {
+public abstract class BaseStage extends JPanel {
     protected CardLayout cardLayout;
     protected JPanel mainPanel;
 
@@ -34,15 +34,18 @@ public abstract class BaseStage extends JFrame {
     protected JLabel nextBtn;
     protected ImageIcon nextBtnImg = new ImageIcon("images/characters/다음버튼.png");
     DialogueBoxListener listener = new DialogueBoxListener(this::updateScene);
-    public BaseStage(String title) {
-        setTitle(title);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    public BaseStage(JPanel mainPanel, CardLayout cardLayout) {
+//        setTitle(title);
+//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.mainPanel = mainPanel;
+        this.cardLayout = cardLayout;
+        setLayout(null); // 절대 배치
         setSize(WINDOW_WIDTH, WINDOW_HEIGHT); // 윈도우 크기 설정
 
-        cardLayout = new CardLayout();
-        mainPanel = new JPanel(cardLayout);
+//        cardLayout = new CardLayout();
+//        mainPanel = new JPanel(cardLayout);
 
-        add(mainPanel); // 메인 패널을 JFrame에 추가
+//        add(mainPanel); // 메인 패널을 JFrame에 추가
         initializeComponents(); // 모든 컴포넌트 초기화
     }
 
@@ -115,7 +118,6 @@ public abstract class BaseStage extends JFrame {
         dialogueScene.add(backgroundImage);
 
         // 리스너 설정
-//        DialogueBoxListener listener = new DialogueBoxListener(this::updateScene);
         dialogueScene.addMouseListener(listener);
         dialogueScene.addKeyListener(listener);
         dialogueScene.setFocusable(true);
@@ -130,8 +132,6 @@ public abstract class BaseStage extends JFrame {
         });
         return dialogueScene;
     }
-
-    protected abstract void initStoryData();
 
     protected void updateScene() {
         if (currentSceneIndex < storyData.length) {
@@ -194,8 +194,11 @@ public abstract class BaseStage extends JFrame {
             System.out.println("스토리가 끝났습니다!");
             // 가능하다. 오버라이딩을 할 수 있나..
             // 문제는 프레임을 여러개 띄우개 된다. 프레임은 고정하고 데이터만 교체하는 방법을 생각해보자.
-            new Stage2();
+            // dispose(); 지금의 화면을 제거하고 새로운 화면을 띄운다.
+            moveToNextStage(); // 스토리가 끝났을 때 다음 스테이지로 전환
+            // 빈화면이 출력된다. 다음으로 넘어가지 않는다.
         }
+
     }
 
     // 헬퍼 메서드: ImageIcon을 지정된 크기로 조정
@@ -224,4 +227,13 @@ public abstract class BaseStage extends JFrame {
         backgroundImage.setIcon(icon);
         backgroundImage.setBounds(x, y, imageWidth, imageHeight);
     }
+    private void moveToNextStage() {
+        String nextStageName = getNextStageName();
+        cardLayout.show(mainPanel, nextStageName);
+
+        // 타이틀 업데이트
+    }
+
+    protected abstract void initStoryData(); // Stage 스토리 초기화
+    protected abstract String getNextStageName(); // 각 Stage의 다름 Stage이름 반환
 }

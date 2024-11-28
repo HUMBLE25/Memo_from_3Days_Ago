@@ -1,8 +1,8 @@
 import stage1.Stage1;
-import stage2.Stage2;
+//import stage2.Stage2;
 import stage3.Stage3;
 import stage4.Stage4;
-import ending.Ending;
+//import ending.Ending;
 import opening.Opening;
 
 import java.awt.*;
@@ -33,9 +33,9 @@ public class Main extends JFrame{
         Opening opening = new Opening();
 
         // Stage 1
-        Stage1 stage1 = new Stage1();
+//        Stage1 stage1 = new Stage1();
         // Stage 2
-        Stage2 stage2 = new Stage2();
+//        Stage2 stage2 = new Stage2();
 
         // Stage 3
         Stage3 stage3 = new Stage3();
@@ -44,6 +44,6 @@ public class Main extends JFrame{
         Stage4 stage4 = new Stage4();
 
         // Ending Scene
-        Ending ending = new Ending();
+//        Ending ending = new Ending();
     }
 }
