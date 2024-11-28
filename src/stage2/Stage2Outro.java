@@ -23,7 +23,7 @@ public class Stage2Outro extends BaseStage {
         storyData = Stage2Data.getOutroScenes();
     }
     protected String getNextStageName(){
-        return "Stage3";
+        return "Stage3Scene";
     }
 
 }
