@@ -1,8 +1,7 @@
 package common;
 
 import stage1.Stage1Intro;
-import stage2.Stage2;
-//import stage2.Stage2;
+import stage2.Stage2Intro;
 
 import javax.swing.*;
 import java.awt.*;
@@ -24,7 +23,7 @@ public class GameFrame extends JFrame {
 
         // 스테이지 추가
         new Stage1Intro(mainPanel, cardLayout);
-        new Stage2(mainPanel, cardLayout);
+        new Stage2Intro(mainPanel, cardLayout);
 
         setVisible(true);
     }

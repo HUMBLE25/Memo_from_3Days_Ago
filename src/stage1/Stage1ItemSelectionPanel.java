@@ -28,10 +28,10 @@ public class Stage1ItemSelectionPanel extends JPanel {
         add(background);
 
         // 디버그용 선택 영역 표시 (실제는 UI 요소로 표시할 수도 있음)
-        JLabel debugLabel1 = createDebugLabel(moonSeongHaArea, Color.RED);
-        JLabel debugLabel2 = createDebugLabel(jeonMyeongHoArea, Color.BLUE);
-        add(debugLabel1);
-        add(debugLabel2);
+//        JLabel debugLabel1 = createDebugLabel(moonSeongHaArea, Color.RED);
+//        JLabel debugLabel2 = createDebugLabel(jeonMyeongHoArea, Color.BLUE);
+//        add(debugLabel1);
+//        add(debugLabel2);
 
         // 마우스 클릭 리스너 추가
         //상태 관리가 되어야 한다.
@@ -59,12 +59,13 @@ public class Stage1ItemSelectionPanel extends JPanel {
                     }
                 } else {
                     System.out.println("선택된 아이템이 없습니다.");
-                    System.out.println("선택 지점"+e.getPoint());
+//                    System.out.println("선택 지점"+e.getPoint());
                 }
                 // 선택 상태 확인 후 처리
 //                checkSelectionCompletion();
             }
         });
+
         setFocusable(true);
         requestFocusInWindow();
         // 패널에 추가
@@ -103,13 +104,13 @@ public class Stage1ItemSelectionPanel extends JPanel {
         JOptionPane.showMessageDialog(this, "다른 사물함도 조사해보세요.");
     }
     // 디버그용으로 선택 영역 표시
-    private JLabel createDebugLabel(Rectangle area, Color color) {
-        JLabel label = new JLabel();
-        label.setBounds(area);
-        label.setOpaque(false); // 투명하게 설정
-        label.setOpaque(true);
-        label.setBackground(color);
-        label.setFocusable(false); // 이벤트 전달 가능
-        return label;
-    }
+//    private JLabel createDebugLabel(Rectangle area, Color color) {
+//        JLabel label = new JLabel();
+//        label.setBounds(area);
+//        label.setOpaque(false); // 투명하게 설정
+//        label.setOpaque(true);
+//        label.setBackground(color);
+//        label.setFocusable(false); // 이벤트 전달 가능
+//        return label;
+//    }
 }
