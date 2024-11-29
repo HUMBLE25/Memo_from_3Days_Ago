@@ -67,8 +67,11 @@ public class ImageRegistry {
         imageCache.put("character_프_지훈", loadImage("images/characters/프_지훈.png"));
         imageCache.put("character_프_지호", loadImage("images/characters/프_지호.png"));
         imageCache.put("character_프_경비", loadImage("images/characters/프_경비.png"));
-        imageCache.put("character_마혜진", loadImage("images/characters/프_혜진.png"));
         imageCache.put("character_프_성민", loadImage("images/characters/프_성민.png"));
+        imageCache.put("character_프_도진", loadImage("images/characters/프_도진.png"));
+        imageCache.put("character_프_혜진", loadImage("images/characters/프_혜진.png"));
+        imageCache.put("character_프_성하", loadImage("images/characters/프_성하.png"));
+        imageCache.put("character_프_명호", loadImage("images/characters/프_명호.png"));
 
         // Characters
         imageCache.put("character_천지호_오른쪽", loadImage("images/characters/천지호_오른쪽.png"));
@@ -79,10 +82,8 @@ public class ImageRegistry {
         imageCache.put("character_도진", loadImage("images/characters/도진.png"));
         imageCache.put("character_전명호_앞", loadImage("images/characters/전명호_앞.png"));
         imageCache.put("character_성민", loadImage("images/characters/성민.png"));
-        imageCache.put("character_프_도진", loadImage("images/characters/프_도진.png"));
         imageCache.put("character_명지훈_왼쪽", loadImage("images/characters/명지훈_왼쪽.png"));
         imageCache.put("character_혜진", loadImage("images/characters/혜진.png"));
-        imageCache.put("character_프_혜진", loadImage("images/characters/프_혜진.png"));
 
         // Common Map
         imageCache.put("stage1_지도", loadImage("images/stage1/지도.png"));

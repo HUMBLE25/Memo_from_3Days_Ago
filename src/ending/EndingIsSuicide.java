@@ -68,10 +68,10 @@ public class EndingIsSuicide extends JPanel {
         questionBox.add(suicideOption);
         questionBox.add(murderOption);
         questionBox.add(nextBtn);
-        // 라디오 버튼에 리스너 추가
-        suicideOption.addActionListener(new RadioBtnActionListener("EndingSelectedSuicide"));
 
-        murderOption.addActionListener(new RadioBtnActionListener("EndingSelectMurder"));
+        // 라디오 버튼에 리스너 추가
+        suicideOption.addActionListener(new RadioBtnActionListener("EndingWrongAnswer")); // 자살 버튼 선택
+        murderOption.addActionListener(new RadioBtnActionListener("EndingSelectMurder")); // 타살 버튼 선택
         // 질문 박스 추가
         add(questionBox);
     }
@@ -106,6 +106,7 @@ public class EndingIsSuicide extends JPanel {
         public RadioBtnActionListener( String nextStageName){
             this.nextStageName = nextStageName;
         }
+
         @Override
         public void actionPerformed(ActionEvent e) {
             cardLayout.show(mainPanel,nextStageName);

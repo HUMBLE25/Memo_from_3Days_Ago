@@ -28,7 +28,7 @@ public class EndingIntro extends BaseStage {
 
 
         // 타살일 경우 범인 선택 EndingSelectMurder
-
+        mainPanel.add(new EndingSelectMurder(mainPanel,cardLayout), "EndingSelectMurder");
 
         // 정답 EndingAnswer, 천지호 선택시
 
