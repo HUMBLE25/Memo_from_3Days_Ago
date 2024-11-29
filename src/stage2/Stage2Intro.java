@@ -1,6 +1,7 @@
 package stage2;
 
 import common.BaseStage;
+import stage4.Stage4;
 
 import javax.swing.*;
 import java.awt.*;
@@ -13,7 +14,7 @@ public class Stage2Intro extends BaseStage {
         initStoryData();
 
         // 대화 장면 생성
-        // Stage1 intro
+        // Stage2 intro
         JPanel dialogueScene = createDialogueScene();
         mainPanel.add(dialogueScene, "Stage2Scene");
 
@@ -45,6 +46,31 @@ public class Stage2Intro extends BaseStage {
 
     protected String getNextStageName(){
         return "Stage2ItemSelectionPanel";
+    }
+
+    // Stage별 테스트를 위한 main 매서드 통합 이후 주석처리 혹은 삭제
+    public static void main(String[] args) {
+        // JFrame 생성
+        JFrame frame = new JFrame("Stage2 Test");
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setSize(1440, 1024);
+        frame.setLocationRelativeTo(null); // 화면 중앙에 배치
+
+        // CardLayout 및 mainPanel 생성
+        CardLayout cardLayout = new CardLayout();
+        JPanel mainPanel = new JPanel(cardLayout);
+
+        // Stage4 인스턴스 생성
+        new Stage2Intro(mainPanel, cardLayout);
+
+        // JFrame에 mainPanel 추가
+        frame.add(mainPanel);
+
+        // JFrame 표시
+        frame.setVisible(true);
+
+        // Stage4 Scene 표시
+        cardLayout.show(mainPanel, "Stage2Scene");
     }
 
 }

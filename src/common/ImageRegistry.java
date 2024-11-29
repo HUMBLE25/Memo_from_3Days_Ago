@@ -25,9 +25,28 @@ public class ImageRegistry {
 
         // Stage1 Outro
         imageCache.put("stage1_옥상", loadImage("images/stage1/옥상.png"));
-        imageCache.put("stage1_지도", loadImage("images/stage1/지도.png"));
+
 
         // Stage2
+        // Stage2 Intro
+        imageCache.put("stage2_학교앞장면", loadImage("images/stage2/학교앞장면.png"));
+
+        // Diary Story
+        imageCache.put("stage2_성하_일기", loadImage("images/stage2/성하_일기.png"));
+
+        // Phone Story
+        imageCache.put("stage2_휴대폰", loadImage("images/stage2/휴대폰.png"));
+
+        // Present Story
+        imageCache.put("stage2_성하_방", loadImage("images/stage2/성하_방.png"));
+        imageCache.put("stage2_편지상자", loadImage("images/stage2/편지상자.png"));
+        imageCache.put("stage2_편지", loadImage("images/stage2/편지.png"));
+
+        // Outro Scenes
+        imageCache.put("stage2_지호_방", loadImage("images/stage2/지호_방.png"));
+        imageCache.put("stage2_실핀", loadImage("images/stage2/실핀.png"));
+
+
         // Stage3
         // Stage4
         // Ending
@@ -36,17 +55,22 @@ public class ImageRegistry {
         imageCache.put("character_프_지훈", loadImage("images/characters/프_지훈.png"));
         imageCache.put("character_프_지호", loadImage("images/characters/프_지호.png"));
         imageCache.put("character_프_경비", loadImage("images/characters/프_경비.png"));
+        imageCache.put("character_마혜진", loadImage("images/characters/프_혜진.png"));
         // Characters
         imageCache.put("character_천지호_오른쪽", loadImage("images/characters/천지호_오른쪽.png"));
         imageCache.put("character_폐인지호", loadImage("images/characters/폐인지호.png"));
         imageCache.put("character_경비", loadImage("images/characters/경비.png"));
         imageCache.put("character_명지훈_오른쪽", loadImage("images/characters/명지훈_오른쪽.png"));
-
         imageCache.put("character_천지호_앞", loadImage("images/characters/천지호_앞.png"));
         imageCache.put("character_도진", loadImage("images/characters/도진.png"));
         imageCache.put("character_전명호_앞", loadImage("images/characters/전명호_앞.png"));
         imageCache.put("character_성민", loadImage("images/characters/성민.png"));
-        // 추가적으로 필요한 이미지도 등록
+
+        // Common Map
+        imageCache.put("stage1_지도", loadImage("images/stage1/지도.png"));
+        imageCache.put("stage2_지도", loadImage("images/stage2/지도.png"));
+
+
     }
 
     private static ImageIcon loadImage(String path) {
