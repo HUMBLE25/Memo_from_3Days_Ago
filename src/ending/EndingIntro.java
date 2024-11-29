@@ -20,15 +20,21 @@ public class EndingIntro extends BaseStage {
 
         // 범인 맞추러 가겠습니까? EndingQuestion
         mainPanel.add(new EndingQuestion(mainPanel,cardLayout),"EndingQuestion");
+
         // 자살 VS 타살? EndingIsSuicide
+        mainPanel.add(new EndingIsSuicide(mainPanel,cardLayout), "EndingIsSuicide");
 
-        // 자살일 경우 EndingSuicide
+        // 자살일 경우 EndingSelectedSuicide
 
-        // 타살일 경우 범인 선택 EndingSelectMuerder
 
-        // 정답 EndingAnswer
+        // 타살일 경우 범인 선택 EndingSelectMurder
 
-        // 오답 EndingWrongAnswer
+
+        // 정답 EndingAnswer, 천지호 선택시
+
+
+        // 오답 EndingWrongAnswer, 자살 선택시, 다른 범인 선택시
+
 
         setVisible(true); // 윈도우 표시
 

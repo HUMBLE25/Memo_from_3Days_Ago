@@ -4,6 +4,10 @@ import common.BlinkingBtnRunnable;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 public class EndingQuestion extends JPanel {
     private CardLayout cardLayout;
@@ -42,10 +46,41 @@ public class EndingQuestion extends JPanel {
         questionBox.add(nextBtn);
         add(questionBox);
 
+        addListeners();
+
     }
 
+    private void addListeners() {
+        // 마우스 클릭 이벤트
+        this.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                moveToNextScene();
+            }
+        });
+
+        // 키보드 이벤트
+        this.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_SPACE || e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    moveToNextScene();
+                }
+            }
+        });
+
+        // 포커스를 받아야 키보드 입력을 받을 수 있음
+        setFocusable(true);
+        requestFocusInWindow();
+    }
+    // 다음 장면으로 이동
+    private void moveToNextScene() {
+        String nextStageName = getNextStageName();
+        cardLayout.show(mainPanel, nextStageName);
+    }
     // 자살 VS 타살 선택
     protected String getNextStageName(){
-        return "";
+
+        return "EndingIsSuicide";
     }
 }
