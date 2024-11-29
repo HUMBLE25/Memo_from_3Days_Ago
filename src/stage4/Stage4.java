@@ -1,9 +1,6 @@
 package stage4;
 
 import common.BaseStage;
-import stage3.Stage3;
-import stage3.Stage3Data;
-
 import javax.swing.*;
 import java.awt.*;
 

@@ -48,7 +48,19 @@ public class ImageRegistry {
 
 
         // Stage3
+        imageCache.put("stage3_예체능관", loadImage("images/stage3/예체능관.png"));
+        imageCache.put("stage3_흡연실", loadImage("images/stage3/흡연실.png"));
+
         // Stage4
+        imageCache.put("stage4_교수방_밖", loadImage("images/stage4/교수방_밖.png"));
+        imageCache.put("stage4_교수방_안", loadImage("images/stage4/교수방_안.png"));
+        imageCache.put("stage4_교수책상", loadImage("images/stage4/교수책상.png"));
+        imageCache.put("stage4_사물함_보고서", loadImage("images/stage4/사물함_보고서.png"));
+        imageCache.put("stage4_청림준비보고서", loadImage("images/stage4/청림준비보고서.png"));
+        imageCache.put("stage4_사물함_편지", loadImage("images/stage4/사물함_편지.png"));
+        imageCache.put("stage4_천지호_편지", loadImage("images/stage4/천지호_편지.png"));
+
+
         // Ending
 
         // profile
@@ -56,6 +68,8 @@ public class ImageRegistry {
         imageCache.put("character_프_지호", loadImage("images/characters/프_지호.png"));
         imageCache.put("character_프_경비", loadImage("images/characters/프_경비.png"));
         imageCache.put("character_마혜진", loadImage("images/characters/프_혜진.png"));
+        imageCache.put("character_프_성민", loadImage("images/characters/프_성민.png"));
+
         // Characters
         imageCache.put("character_천지호_오른쪽", loadImage("images/characters/천지호_오른쪽.png"));
         imageCache.put("character_폐인지호", loadImage("images/characters/폐인지호.png"));
@@ -65,11 +79,16 @@ public class ImageRegistry {
         imageCache.put("character_도진", loadImage("images/characters/도진.png"));
         imageCache.put("character_전명호_앞", loadImage("images/characters/전명호_앞.png"));
         imageCache.put("character_성민", loadImage("images/characters/성민.png"));
+        imageCache.put("character_프_도진", loadImage("images/characters/프_도진.png"));
+        imageCache.put("character_명지훈_왼쪽", loadImage("images/characters/명지훈_왼쪽.png"));
+        imageCache.put("character_혜진", loadImage("images/characters/혜진.png"));
+        imageCache.put("character_프_혜진", loadImage("images/characters/프_혜진.png"));
 
         // Common Map
         imageCache.put("stage1_지도", loadImage("images/stage1/지도.png"));
         imageCache.put("stage2_지도", loadImage("images/stage2/지도.png"));
-
+        imageCache.put("stage3_지도", loadImage("images/stage3/지도.png"));
+        imageCache.put("stage4_지도", loadImage("images/stage4/지도.png"));
 
     }
 
