@@ -64,6 +64,14 @@ public class ImageRegistry {
         // Ending
         imageCache.put("Ending_오답", loadImage("images/ending/오답.png"));
         imageCache.put("Ending_오답_복수", loadImage("images/ending/오답_복수.png"));
+        imageCache.put("Ending_옥상", loadImage("images/ending/옥상.png"));
+        imageCache.put("Ending_컴퓨터", loadImage("images/ending/컴퓨터.png"));
+        imageCache.put("Ending_컴퓨터_글", loadImage("images/ending/컴퓨터_글.png"));
+        imageCache.put("Ending_휴대폰", loadImage("images/ending/휴대폰.png"));
+        imageCache.put("Ending_명훈_성하_폭행", loadImage("images/ending/명훈_성하_폭행.png"));
+        imageCache.put("Ending_고기집", loadImage("images/ending/고기집.png"));
+        imageCache.put("Ending_성하_지호_말싸움", loadImage("images/ending/성하_지호_말싸움.png"));
+        imageCache.put("Ending_성하편지", loadImage("images/ending/성하편지.png"));
 
         // profile
         imageCache.put("character_프_지훈", loadImage("images/characters/프_지훈.png"));
@@ -77,14 +85,16 @@ public class ImageRegistry {
 
         // Characters
         imageCache.put("character_천지호_오른쪽", loadImage("images/characters/천지호_오른쪽.png"));
+        imageCache.put("character_천지호_앞", loadImage("images/characters/천지호_앞.png"));
         imageCache.put("character_폐인지호", loadImage("images/characters/폐인지호.png"));
         imageCache.put("character_경비", loadImage("images/characters/경비.png"));
         imageCache.put("character_명지훈_오른쪽", loadImage("images/characters/명지훈_오른쪽.png"));
-        imageCache.put("character_천지호_앞", loadImage("images/characters/천지호_앞.png"));
+        imageCache.put("character_명지훈_왼쪽", loadImage("images/characters/명지훈_왼쪽.png"));
         imageCache.put("character_도진", loadImage("images/characters/도진.png"));
         imageCache.put("character_전명호_앞", loadImage("images/characters/전명호_앞.png"));
+        imageCache.put("character_문성하_왼쪽", loadImage("images/characters/문성하_왼쪽.png"));
+        imageCache.put("character_문성하_오른쪽", loadImage("images/characters/문성하_오른쪽.png"));
         imageCache.put("character_성민", loadImage("images/characters/성민.png"));
-        imageCache.put("character_명지훈_왼쪽", loadImage("images/characters/명지훈_왼쪽.png"));
         imageCache.put("character_혜진", loadImage("images/characters/혜진.png"));
 
         // Common Map

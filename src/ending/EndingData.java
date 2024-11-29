@@ -8,12 +8,28 @@ import javax.swing.*;
 public class EndingData {
     // Images
     private static final ImageIcon profileJiHoon = ImageRegistry.getImage("character_프_지훈");
+    private static final ImageIcon profileSungHa = ImageRegistry.getImage("character_프_성하");
+    private static final ImageIcon profileJiHo = ImageRegistry.getImage("character_프_지호");
+    private static final ImageIcon profileSungMin = ImageRegistry.getImage("character_프_성민");
+    private static final ImageIcon profileMyungHo = ImageRegistry.getImage("character_프_명호");
+
     private static final ImageIcon characterJiHoonFront = ImageRegistry.getImage("character_천지호_앞");
     private static final ImageIcon characterDoJin = ImageRegistry.getImage("character_도진");
     private static final ImageIcon characterMyungHo = ImageRegistry.getImage("character_전명호_앞");
     private static final ImageIcon characterSungMin = ImageRegistry.getImage("character_성민");
+    private static final ImageIcon characterSungHa = ImageRegistry.getImage("character_문성하_왼쪽");
+    private static final ImageIcon characterSungHaRight = ImageRegistry.getImage("character_문성하_오른쪽");
+
     private static final ImageIcon wrongAnswer = ImageRegistry.getImage("Ending_오답");
     private static final ImageIcon failedRevenge = ImageRegistry.getImage("Ending_오답_복수");
+    private static final ImageIcon roofTop = ImageRegistry.getImage("Ending_옥상");
+    private static final ImageIcon computer = ImageRegistry.getImage("Ending_컴퓨터");
+    private static final ImageIcon computerLetter = ImageRegistry.getImage("Ending_컴퓨터_글");
+    private static final ImageIcon phone = ImageRegistry.getImage("Ending_휴대폰");
+    private static final ImageIcon MyeongHoonSungHaFight = ImageRegistry.getImage("Ending_명훈_성하_폭행");
+    private static final ImageIcon meatRestaurant = ImageRegistry.getImage("Ending_고기집");
+    private static final ImageIcon SungHaJiHoFight = ImageRegistry.getImage("Ending_성하_지호_말싸움");
+    private static final ImageIcon SungHaLetter = ImageRegistry.getImage("Ending_성하편지");
 
     // Ending intro
     public static SceneData[] getIntro(){
@@ -154,15 +170,6 @@ public class EndingData {
                         .build(),
         };
     }
-    // 범인 맞추러 가겠습니까?
-
-    // 자살 VS 타살
-
-    // 자살일 경우
-
-    // 타살일 경우 범인 선택
-
-    // 정답
 
     // 오답
     public static SceneData[] getWrongAnswerScenes(){
@@ -206,4 +213,875 @@ public class EndingData {
 
         };
     }
+
+    // 정답
+    public static SceneData[] getAnswerScenes(){
+        return new SceneData[]{
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setDialogue("어제 내가 준거.. 읽어봤어?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setDialogue("야, 이거..")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setDialogue("어때..?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("성하야. 입발린 소리가 아니라 진심으로 이거 잘 다듬으면 청림 대상감이야.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("어..? 아냐, 그 정도까지는..")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("나 믿어. 이건 진짜 문학계에 줄 하나 그을 것 같은 작이야. 살면서 읽은 것 중에\n" +
+                                "제일 재밌었어.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("진짜..?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("근데 여기서 이 설정을 고치면 어때? 차라리 여자애를 부자로 해서 남자가애가\n" +
+                                "입원을 한 뒤에도 챙겨줄 여유가 되는 거야. 그게 아니면 현실성이 떨어져.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("어! 그거 좋은데?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("마지막에는 눈사람을 만들 때 남자애가 안아주고 하는 걸로 하자. 쓰러진 후에 발\n" +
+                                "견하는 것도 좀 비현실적이게 느껴졌어. 그리고... 듣고 있어?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("지호야.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("어?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("나랑 이거 합작할래?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("..어? 그래도 돼?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("응. 느낌이 와. 이거 우리 같이 하면 진짜 잘 될 거 같아.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("전체적 시나리오는 네가 짠 거잖아. 나랑 합작하면 이거 저작권 나랑 나눠가지는\n" +
+                                "데 괜찮아?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("나 혼자서는 이 이야기 100퍼센트로 못 살려. 네가 있어야 완벽해질 것 같아. 나랑\n" +
+                                "이걸로 같이 청림 나가보자. 시간이 얼마가 걸려도 상관 없으니까 졸업 전까지 꼭\n" +
+                                "나가보자. 선배들 다 졸업까지 등단을 못해서 백수됐잖아. 우리 이걸로 해보자.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("..그래. 좋아. 해 보자. 나도 할 수 있을 것 같은 마음이 들어.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(roofTop)
+                        .setDialogue("벌써 이걸 준비한지 3년이 다 됐네.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(roofTop)
+                        .setDialogue("그러게. 원고가 거의 1000장인데 이젠 안 보고도 줄줄 읽을 수 있을 거 같아. 인터\n" +
+                                "넷도 안 한지 참 오래됐다. 전화 받는 거 말고는 정말 단절된 거 같아.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(roofTop)
+                        .setDialogue("그러게. 마지막으로 힘내서 마감 작업 하러 가자.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(computer)
+                        .setDialogue("어! 들어갔다!")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(computer)
+                        .setDialogue("..........")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(computerLetter)
+                        .setDialogue("..........")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(computerLetter)
+                        .setDialogue("됐다!")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(computerLetter)
+                        .setDialogue("드디어 됐다! 수고했어!")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(phone)
+                        .setDialogue("..이거 청림에서 온 전화 아니야?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(phone)
+                        .setDialogue("맞네, 청림 번호야! 발표가 벌써 났나봐. 얼른 받아봐!")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setDialogue("...................")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("뭐래? 혹시 발표 벌써 난 거래? 우리 몇 위래?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue(".....")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("지호야.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("응.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("우리 실격이래..")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("...뭐?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("완벽한 표절이래, 우리가.. 실격에 참가 제한 5년이래..")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("아니, 이게 뭔 소리야..! 우리가 무슨 표절-")
+                        .build(),
+
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue(".. 전화 왔어.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("..누구한테?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("금성민 교수님.. 당장 오래.")
+                        .build(),
+
+
+                new SceneData.Builder()
+                        .setProfileName("금성민 교수")
+                        .setProfileImage(profileSungMin)
+                        .setMainCharacterImage(characterSungMin)
+                        .setDialogue("내가 살다살다 내 학생이 표절을 했다는 연락을 받네. 그것도 청림에서 말이야.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("교수님, 저희는 맹세코 표절하지 않았습니다.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setMainCharacterImage(characterSungHaRight)
+                        .setDialogue("아시잖습니까! 저희가 청림에만 거의 3년을-")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("금성민 교수")
+                        .setProfileImage(profileSungMin)
+                        .setMainCharacterImage(characterSungMin)
+                        .setDialogue("그럼 표절한 놈이 나 표절했다고 할까! 너희는 우리 대학원의 수치야. 글에 재능\n" +
+                                "이 없으면 포기하던가 왜 억지로 하겠다고 설쳐서 남의 걸 표절하고 말이야! 자\n" +
+                                "네들 때문에 올해 처음으로 대상을 받은 전명호 학생이 그 명예를 잃었다고!")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setMainCharacterImage(characterSungHaRight)
+                        .setDialogue("네? 전명호 선배요?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("금성민 교수")
+                        .setProfileImage(profileSungMin)
+                        .setMainCharacterImage(characterSungMin)
+                        .setDialogue("자네가 표절한 그 작품. 그 작가가 누군지도 보지 않은건가? 이렇게 무식하고 뻔\n" +
+                                "뻔한 게 내 학생이라니. 자네들이 보고 베낀 그 글, 전명호 학생이 작년에 청림에\n" +
+                                "서 대상을 탄 글이 아닌가!")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("..교수님. 저희는 그 글을 봐야 겠습니다. 전명호 선배가 저희와 같은 글을 썼다는\n" +
+                                "말씀이신가요?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("금성민 교수")
+                        .setProfileImage(profileSungMin)
+                        .setMainCharacterImage(characterSungMin)
+                        .setDialogue("어디서 자꾸 뻔뻔하게 나오는 건가. 자네들 처지를 아직도 모르겠나? 자네들은\n" +
+                                "범죄자야!")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setMainCharacterImage(characterSungHaRight)
+                        .setDialogue("아니요! 저희는 표절을 하지 않았습니다. 믿어주세요! 저희가 순수하게 그 1000장\n" +
+                                "넘는 분량을 씹고 씹어서 쓴 글이라고요!")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("금성민 교수")
+                        .setProfileImage(profileSungMin)
+                        .setMainCharacterImage(characterSungMin)
+                        .setDialogue("둘 다 입 다물지 못하겠나! 자네들이 무슨 말을 하든 표절범들이 하는 말에 놀아\n" +
+                                "날 생각 없네! 꼴도 보기 싫으니까 나가게!")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setMainCharacterImage(characterSungHaRight)
+                        .setDialogue("..............")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("..............")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("무슨 날벼락이야. 전명호 선배 얘기는 뭐고?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("우리 글이 작년에 대상을 탄 전명호 선배 글이랑 똑같다고? 우린 이 글에 아무런\n" +
+                                "참고도 하고 싶지 않아서 3년간 SNS랑 인터넷도 거의 안 하고 살았다고!")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("이건 무조건 100퍼센트야. 전명호가 우리 글을 가져간 게 틀림 없어.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("맞아. 그때 우리 도와준다고 글 잠깐 봐줬잖아.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("당장 찾아가자. 그 자식 지금 어디있어. 감히 우리의 3년을 가로채?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("전명호")
+                        .setProfileImage(profileMyungHo)
+                        .setMainCharacterImage(characterMyungHo)
+                        .setDialogue("표절이라..")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("솔직히 저희끼리 오리발 내밀 것도 없잖아요. 너무 확실하잖아요. 지금 뭐하자는 \n" +
+                                "거죠?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setMainCharacterImage(characterSungHaRight)
+                        .setDialogue("저희가 그 글을 몇 년 준비했는지 모르시는 것도 아니잖아요. 어떻게 이런 짓을..")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("전명호")
+                        .setProfileImage(profileMyungHo)
+                        .setMainCharacterImage(characterMyungHo)
+                        .setDialogue("야, 너희 웃긴다. 증거있어?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setMainCharacterImage(characterSungHaRight)
+                        .setDialogue("뭐라고요?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("전명호")
+                        .setProfileImage(profileMyungHo)
+                        .setMainCharacterImage(characterMyungHo)
+                        .setDialogue("증거 하나도 없잖아. 똑같은 글이 두개였다면 먼저 나간 사람 거지. 그러게 누가\n" +
+                                "3년이나 글을 묻혀두래? 누가 인터넷 안 하고 살래?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setMainCharacterImage(characterSungHaRight)
+                        .setDialogue("..지금 그게 할 말인가요? 선배 이렇게 뻔뻔한 사람이었어요?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("전명호")
+                        .setProfileImage(profileMyungHo)
+                        .setMainCharacterImage(characterMyungHo)
+                        .setDialogue("뻔뻔? 선배한테 못하는 말이 없네.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("선배 취급을 해줄 수가 없잖아! 재능이 없어서 동생들거 가져가 상 받으니 좋아 \n" +
+                                "죽겠냐? 그래서 등단하면 자랑스러울 거 같아?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("전명호")
+                        .setProfileImage(profileMyungHo)
+                        .setMainCharacterImage(characterMyungHo)
+                        .setDialogue("말 다 했냐?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setMainCharacterImage(characterSungHaRight)
+                        .setDialogue("다 안 했어요! 어떻게 문학인이라는 사람이 오로지 수상이랑 돈 때문에 표절을 할\n" +
+                                " 수가 있어요! 이건 무조건- 윽!")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("성하야!! 당신 지금 뭐하는 거야!")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setBackgroundImage(MyeongHoonSungHaFight)
+                        .setDialogue(" ")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("성하야. 얼굴은 괜찮아?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("네가 막아줘서 많이 안 다쳤어. 네가 더 맞았잖아.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("...........")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("..야, 울지마.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("지호야.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("응.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("나 죽고 싶어..")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("..............")
+                        .build(),
+
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("아니, 안 돼.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("어..?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("죽어도 우리 죽으면 더 억울하지.")
+                        .build(),
+
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("잘못을 한 사람이 죽어야지, 왜 우리가 죽어. 전명호 그 자식이 죽어야지.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("너 많이 취했구나..")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("진짜로 죽이고 싶어. 넌 안 죽이고 싶어?")
+                        .build(),
+
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("나 지금 눈에 뵈는 게 없어. 미친 척하고 그냥 죽여버리고 싶어. 너만 있으면 다\n" +
+                                "가능할 것 같아. 그냥 밀어버리고 싶어.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("........")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("죄책감 하나 없이 사람의 3년을 가로챈 걸로 모자라 우릴 이렇게 팼는데 왜 걔가\n" +
+                                "박수갈채를 받고 작가 칭호를 얻어? 그딴 인간이 왜?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("지호야.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("..응.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("하지만.. 그래도. 죽이는 게 방법일까?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("우리 이거 소문 퍼지는거 한순간이야. 그 큰 청림에서 표절로 실격인데 참가 제한\n" +
+                                "5년이라는 건 앞으로 5년 동안 우릴 받아줄 곳이 없다는 뜻이야. 또 5년이 아니라\n" +
+                                "평생일 수도 있어.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("...어떻게 죽일 건데?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("청림 발표가 12월 10일이지?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("그 날에 그냥 옥상에서 밀어버리자. 나 정말 가능할 것 같아. 원래 그 날에 웃고 \n" +
+                                "있어야 할 우리를 위해서라도.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("그럼 넌 남은 삶을 문학인이 아니라 살인자로 살게 되는 거잖아..")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("아니. 옥상엔 CCTV가 없어. 내가 경비랑 친해서 잘 알아. 열쇠가 어디있는지도 알\n" +
+                                "아. 전명호 말대로 증거가 없다면 끝인 거잖아. 알리바이만 있으면 발뺌할 수 있\n" +
+                                "어.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("..진심이구나, 너.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("응. 난 진심이야. 솔직히 너도 당장 죽이고 싶잖아. 왜 우리처럼 진실했던 사람들\n" +
+                                "이 피해를 받고 살아야 해?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(meatRestaurant)
+                        .setDialogue("..그래. 죽이자. 우리 전명호를 죽이자.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setDialogue(".....")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setDialogue("아니야. 이건 아니잖아..")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setDialogue("지호를 말려야 해.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("할 말이 있다고?")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("..그만하자.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("무슨 소리야.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("우리가 너무 흥분했어. 아무리 우리가 잡혀가지 않아서 혐의를 벗는다고 해도 사\n" +
+                                "람을 죽였다는 마음으로 앞으로 어떻게 글을 쓰겠어. 지호야, 다 그만하다. 너랑\n" +
+                                " 나 이런애 아니잖아.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setSubCharacterImage(characterSungHa)
+                        .setMainCharacterImage(characterJiHoonFront)
+                        .setDialogue("이제 와서 무슨 소리야. 지금 여기까지 왔는데!")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(SungHaJiHoFight)
+                        .setDialogue("내 생각은 안 바뀌어. 바꿀 수가 없어. 이미 교수한테 그렇게 혼난 날부터 난 제정\n" +
+                                "신이 아니야.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(SungHaJiHoFight)
+                        .setDialogue("..난 네 계획 도와주지 않을 거야.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(SungHaJiHoFight)
+                        .setDialogue("네가 아니더라도 난 전명호를 죽일 거야.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(SungHaJiHoFight)
+                        .setDialogue("천지호!")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(SungHaJiHoFight)
+                        .setDialogue("그런 말 할거면 나 이만 가볼게.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(SungHaJiHoFight)
+                        .setDialogue("지호야!")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(SungHaLetter)
+                        .setDialogue("..이게 뭐지.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("천지호")
+                        .setProfileImage(profileJiHo)
+                        .setBackgroundImage(SungHaLetter)
+                        .setDialogue("문성하 진짜..")
+                        .build(),
+        };
+    }
+
 }

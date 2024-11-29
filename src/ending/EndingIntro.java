@@ -28,7 +28,12 @@ public class EndingIntro extends BaseStage {
         mainPanel.add(new EndingSelectMurder(mainPanel,cardLayout), "EndingSelectMurder");
 
         // 정답 EndingAnswer, 천지호 선택시
+        new EndingAnswer(mainPanel,cardLayout);
 
+        // EndingSungHaLetter, 성하 편지
+        mainPanel.add(new EndingSungHaLetter(mainPanel,cardLayout), "EndingSungHaLetter");
+
+        // EndingContinueAnswer, 성하 편지 이어서 장면 전환
 
         // 오답 EndingWrongAnswer, 자살 선택시, 다른 범인 선택시
         new EndingWrongAnswer(mainPanel,cardLayout);
