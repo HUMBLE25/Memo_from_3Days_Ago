@@ -62,6 +62,8 @@ public class ImageRegistry {
 
 
         // Ending
+        imageCache.put("Ending_오답", loadImage("images/ending/오답.png"));
+        imageCache.put("Ending_오답_복수", loadImage("images/ending/오답_복수.png"));
 
         // profile
         imageCache.put("character_프_지훈", loadImage("images/characters/프_지훈.png"));

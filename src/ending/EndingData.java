@@ -12,6 +12,8 @@ public class EndingData {
     private static final ImageIcon characterDoJin = ImageRegistry.getImage("character_도진");
     private static final ImageIcon characterMyungHo = ImageRegistry.getImage("character_전명호_앞");
     private static final ImageIcon characterSungMin = ImageRegistry.getImage("character_성민");
+    private static final ImageIcon wrongAnswer = ImageRegistry.getImage("Ending_오답");
+    private static final ImageIcon failedRevenge = ImageRegistry.getImage("Ending_오답_복수");
 
     // Ending intro
     public static SceneData[] getIntro(){
@@ -163,4 +165,45 @@ public class EndingData {
     // 정답
 
     // 오답
+    public static SceneData[] getWrongAnswerScenes(){
+        return new SceneData[]{
+                new SceneData.Builder()
+                        .setProfileName("명지훈")
+                        .setProfileImage(profileJiHoon)
+                        .setDialogue("모은 증거와 내 추리를 경찰에게 말했다가 인정 받지 못했다.\n")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("명지훈")
+                        .setProfileImage(profileJiHoon)
+                        .setDialogue("오히려 친구이던 내가 이상한 궤변을 늘어놓은 바람에 성하가 표절의 죄를 감당\n" +
+                                "하지 못해 극단적 선택을 해버렸다는 것이 사실로 굳혀지고 있다.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("명지훈")
+                        .setProfileImage(profileJiHoon)
+                        .setDialogue("내 추리는 틀렸다. 오히려 성하의 죽음을 단순 자살로 처리되게 만들 뿐이었다.")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("명지훈")
+                        .setProfileImage(profileJiHoon)
+                        .setDialogue("난 죽은 친구를 위해 아무것도 해줄 수 없었다..")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("명지훈")
+                        .setProfileImage(profileJiHoon)
+                        .setDialogue("난 죽은 친구를 위해 아무것도 해줄 수 없었다..")
+                        .setBackgroundImage(wrongAnswer)
+                        .build(),
+
+                new SceneData.Builder()
+                        .setBackgroundImage(failedRevenge)
+                        .build(),
+
+
+        };
+    }
 }
