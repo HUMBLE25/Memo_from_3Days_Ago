@@ -16,7 +16,7 @@ public class EndingIntro extends BaseStage {
         // 대화 장면 생성
         // Ending intro
         JPanel dialogueScene = createDialogueScene();
-        mainPanel.add(dialogueScene, "EndingIntroScence");
+        mainPanel.add(dialogueScene, "EndingIntroScene");
 
         // 범인 맞추러 가겠습니까? EndingQuestion
         mainPanel.add(new EndingQuestion(mainPanel,cardLayout),"EndingQuestion");
@@ -83,7 +83,7 @@ public class EndingIntro extends BaseStage {
         frame.setVisible(true);
 
         // Stage4 Scene 표시
-        cardLayout.show(mainPanel, "EndingIntro");
+        cardLayout.show(mainPanel, "EndingIntroScene");
     }
 
 }
