@@ -32,13 +32,6 @@ public class GameFrame extends JFrame {
         setVisible(true);
     }
 
-    // 스테이지를 CardLayout에 추가
-    private void addStage(BaseStage stage, String name) {
-        mainPanel.add(stage, name);
-    }
-
-
-
     public static void main(String[] args) {
         new GameFrame(); // 게임 실행
     }
