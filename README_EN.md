@@ -8,27 +8,41 @@
 Players explore various scenes, collect clues, and make decisions to uncover the truth behind the incident.  
 Every choice influences the story’s progression and its ending, providing an immersive experience.
 
+<br>
+<br>
+
 ---
+
 
 ## 🎯 Motivation
 This project stemmed from a passion for merging interactive storytelling with gaming.  
 We wanted to create a game where players’ choices have a tangible impact on the outcome.  
 Additionally, it served as an opportunity to challenge ourselves technically and grow through collaborative creativity.
 
----
+<br>
+<br>
 
+---
 ## 🚀 Key Features
 - **Engaging Story**: A dynamic narrative that adapts to players' choices, leading to multiple endings.
 - **Interactive Decisions**: Real-time decision-making influences the game’s direction.
 - **Custom Soundtrack**: Background music that enhances immersion.
 - **Explorative Gameplay**: Discover clues and advance the story through exploration and choices.
 
+<br>
+<br>
+
 ---
+
 
 ## 🖼️ Screenshots
 ![Start Screen](images/screenshots/start.png)
 ![Memo from 3 Days Ago](images/screenshots/3day_before_memo.png)
 ![Gameplay - Selecting the Culprit](images/screenshots/is_murder.png)
+
+
+<br>
+<br>
 
 ---
 
@@ -52,11 +66,17 @@ git clone https://github.com/HUMBLE25/Memo_from_3Days_Ago.git
 ### 4. Run the Game 
 Main.java file to start the game.
 
+<br>
+<br>
+
 ---
 ## 🎮 How to Play
 - Use the mouse to interact with objects and make choices.
 - Your decisions will influence the game’s ending.
 - Explore various story routes to uncover the truth.
+
+<br>
+<br>
 
 ---
 ## 👨‍💻 Team Members
@@ -84,11 +104,17 @@ Main.java file to start the game.
        - Opening Development, Presentation Slides
     - GitHub: github.com/Keobon
 
+<br>
+<br>
+
 ---
 ## 🙏 Additional Information & Acknowledgements
 - JLayer Library: Provides MP3 playback functionality.
 - FreeSound.org: Sound effect resources.
 - A huge thanks to everyone who supported us in completing this project!
+
+<br>
+<br>
 
 ---
 ## ⚠️ Disclaimer
