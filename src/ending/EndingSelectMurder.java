@@ -3,6 +3,7 @@ package ending;
 import common.BlinkingBtnRunnable;
 import common.GradientPanel;
 import common.ImageRegistry;
+import common.MusicController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -81,11 +82,23 @@ public class EndingSelectMurder extends JPanel {
         private final String nextSceneName;
 
         public ProfileClickListener(String nextSceneName) {
+
             this.nextSceneName = nextSceneName;
         }
 
         @Override
         public void mouseClicked(MouseEvent e) {
+            if(nextSceneName.equals("EndingWrongAnswer")){
+                // ending.mp3 중지
+//                MusicController.getInstance().playMusic("music/ending.mp3",false);
+                // 오답 음악 재생
+                MusicController.getInstance().playMusic("music/not_answer.mp3",true);
+            }else {
+                // ending.mp3 중지
+//                MusicController.getInstance().playMusic("music/ending.mp3",false);
+                // 정답 음악 재생
+                MusicController.getInstance().playMusic("music/answer.mp3",true);
+            }
             cardLayout.show(mainPanel, nextSceneName);
         }
     }

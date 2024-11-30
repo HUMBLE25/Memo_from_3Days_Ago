@@ -15,15 +15,18 @@ public class MusicController {
         return instance;
     }
 
-    public void playMusic(String filePath, boolean loop) {
+    public synchronized void playMusic(String filePath, boolean loop) {
         stopMusic(); // 기존 음악 중지
         currentPlayer = new MusicPlayer(filePath, loop);
-        new Thread(currentPlayer).start();
+        Thread musicThread = new Thread(currentPlayer);
+        musicThread.setDaemon(true); // 프로그램 종료 시 음악 스레드도 종료
+        musicThread.start();
     }
 
-    public void stopMusic() {
+    public synchronized void stopMusic() {
         if (currentPlayer != null) {
-            currentPlayer.stop();
+            currentPlayer.stop(); // 기존 음악 중지
+            currentPlayer = null;
         }
     }
 }
