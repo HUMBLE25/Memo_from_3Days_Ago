@@ -9,6 +9,7 @@ public class ImageRegistry {
 
     static {
         // Opening
+
         // Stage1
         // Stage1 Intro
         imageCache.put("stage1_학교", loadImage("images/stage1/학교.png"));
@@ -72,6 +73,7 @@ public class ImageRegistry {
         imageCache.put("Ending_고기집", loadImage("images/ending/고기집.png"));
         imageCache.put("Ending_성하_지호_말싸움", loadImage("images/ending/성하_지호_말싸움.png"));
         imageCache.put("Ending_성하편지", loadImage("images/ending/성하편지.png"));
+        imageCache.put("Ending_3일뒤메모", loadImage("images/ending/3일뒤메모.png"));
 
         // profile
         imageCache.put("character_프_지훈", loadImage("images/characters/프_지훈.png"));
@@ -102,6 +104,10 @@ public class ImageRegistry {
         imageCache.put("stage2_지도", loadImage("images/stage2/지도.png"));
         imageCache.put("stage3_지도", loadImage("images/stage3/지도.png"));
         imageCache.put("stage4_지도", loadImage("images/stage4/지도.png"));
+
+        // Button
+        imageCache.put("button", loadImage("images/characters/다음버튼.png"));
+
 
     }
 

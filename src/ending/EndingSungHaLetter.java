@@ -36,7 +36,7 @@ public class EndingSungHaLetter extends JPanel {
                 "\n" +
                 "성하가");
         text.setBounds(72,81,1233,504);
-        text.setFont(new Font("Anonymous Pro", Font.PLAIN, 20));
+        text.setFont(new Font("VT323", Font.PLAIN, 20));
         text.setForeground(Color.WHITE);
         text.setOpaque(false); // 배경 투명
         text.setEditable(false); // 수정 불가
@@ -85,7 +85,8 @@ public class EndingSungHaLetter extends JPanel {
     }
     // 다음 장면으로 전환
     private void goToNextScene() {
-        cardLayout.show(mainPanel, "NextSceneName"); // "NextSceneName"을 실제 다음 장면 이름으로 변경
+        // 지호의 메모로 넘어감
+        cardLayout.show(mainPanel, "Ending3DayAfterMemo"); // "NextSceneName"을 실제 다음 장면 이름으로 변경
     }
 
 }

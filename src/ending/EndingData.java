@@ -30,6 +30,8 @@ public class EndingData {
     private static final ImageIcon meatRestaurant = ImageRegistry.getImage("Ending_고기집");
     private static final ImageIcon SungHaJiHoFight = ImageRegistry.getImage("Ending_성하_지호_말싸움");
     private static final ImageIcon SungHaLetter = ImageRegistry.getImage("Ending_성하편지");
+    private static final ImageIcon dayAfterMemo = ImageRegistry.getImage("Ending_3일뒤메모");
+
 
     // Ending intro
     public static SceneData[] getIntro(){
@@ -1081,7 +1083,28 @@ public class EndingData {
                         .setBackgroundImage(SungHaLetter)
                         .setDialogue("문성하 진짜..")
                         .build(),
+
+                // 문성하 편지로 넘김
         };
+    }
+
+    public static SceneData[] get3DayAfterMemoScenes(){
+        return new SceneData[]{
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(dayAfterMemo)
+                        .setDialogue("....................")
+                        .build(),
+
+                new SceneData.Builder()
+                        .setProfileName("문성하")
+                        .setProfileImage(profileSungHa)
+                        .setBackgroundImage(dayAfterMemo)
+                        .setDialogue("정말 어쩌면 좋을까..")
+                        .build(),
+        };
+
     }
 
 }
