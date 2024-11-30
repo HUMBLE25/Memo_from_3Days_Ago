@@ -110,7 +110,7 @@ Main.java file to start the game.
 ---
 ## 🙏 Additional Information & Acknowledgements
 - JLayer Library: Provides MP3 playback functionality.
-- FreeSound.org: Sound effect resources.
+- pixabay: Sound effect resources.
 - A huge thanks to everyone who supported us in completing this project!
 
 <br>
