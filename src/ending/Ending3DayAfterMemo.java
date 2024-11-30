@@ -35,14 +35,14 @@ public class Ending3DayAfterMemo extends BaseStage {
         updateScene(); // 첫번째 장면 표시
 
     }
-        @Override
-        protected void initStoryData() {
-            // Stage?Data이 부분들만 내용을 삽입해주면 된다.
-            storyData = EndingData.get3DayAfterMemoScenes();
-        }
+    @Override
+    protected void initStoryData() {
+        // Stage?Data이 부분들만 내용을 삽입해주면 된다.
+        storyData = EndingData.get3DayAfterMemoScenes();
+    }
 
-        protected String getNextStageName(){
-            // 명호,지호 싸움장면으로 넘어간다.
-            return "";
-        }
+    protected String getNextStageName(){
+        // 명호,지호 싸움장면으로 넘어간다.
+        return "EndingFinal";
+    }
 }

@@ -113,4 +113,4 @@ public class EndingSelectMurder extends JPanel {
             super.paintComponent(g);
         }
     }
-    }
+}

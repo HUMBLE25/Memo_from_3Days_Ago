@@ -37,10 +37,13 @@ public class EndingIntro extends BaseStage {
         new Ending3DayAfterMemo(mainPanel,cardLayout);
 
         // EndingFinal, 명호,지호 싸움 + 마무리
+        new EndingFinal(mainPanel,cardLayout);
+
+        // EndingGoodBye, 범인은 지호. 이젠 안녕
+        mainPanel.add(new EndingGoodBye(mainPanel,cardLayout), "EndingGoodBye");
 
         // 오답 EndingWrongAnswer, 자살 선택시, 다른 범인 선택시
         new EndingWrongAnswer(mainPanel,cardLayout);
-
 
         setVisible(true); // 윈도우 표시
 

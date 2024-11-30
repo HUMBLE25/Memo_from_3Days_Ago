@@ -74,6 +74,10 @@ public class ImageRegistry {
         imageCache.put("Ending_성하_지호_말싸움", loadImage("images/ending/성하_지호_말싸움.png"));
         imageCache.put("Ending_성하편지", loadImage("images/ending/성하편지.png"));
         imageCache.put("Ending_3일뒤메모", loadImage("images/ending/3일뒤메모.png"));
+        imageCache.put("Ending_명훈_지호_몸싸움", loadImage("images/ending/명훈_지호_몸싸움.png"));
+        imageCache.put("Ending_추락전", loadImage("images/ending/추락전.png"));
+        imageCache.put("Ending_추락", loadImage("images/ending/추락.png"));
+        imageCache.put("Ending_이젠안녕", loadImage("images/ending/이젠안녕.png"));
 
         // profile
         imageCache.put("character_프_지훈", loadImage("images/characters/프_지훈.png"));
