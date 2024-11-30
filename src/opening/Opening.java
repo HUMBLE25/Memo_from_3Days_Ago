@@ -11,11 +11,6 @@ public class Opening extends JFrame {
     private boolean isTriangleVisible = true;  // 삼각형 깜빡임 상태
     private Timer blinkTimer; // Timer를 사용하여 주기적으로 상태 변경
 
-    public void run() {
-        System.out.println("Opening..");
-    }
-
-
     public Opening() {
         setTitle("Start");
         setDefaultCloseOperation(EXIT_ON_CLOSE);

@@ -9,6 +9,7 @@ public class ImageRegistry {
 
     static {
         // Opening
+        imageCache.put("Opening_게임시작", loadImage("images/opening/게임시작.png"));
 
         // Stage1
         // Stage1 Intro

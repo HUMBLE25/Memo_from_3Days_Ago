@@ -2,6 +2,8 @@ package opening;
 
 //import stage1.Stage1;
 
+import common.GameFrame;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -51,7 +53,8 @@ public class Start29 extends JFrame {
     }
     private void goToNextPage() {
         Start29.this.dispose();
-//        new stage1.Stage1();
+        // Stage1으로 전환
+        new GameFrame();
     }
     public static void main(String[] args) {
         new Start29();
