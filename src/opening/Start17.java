@@ -49,7 +49,7 @@ public class Start17 extends JFrame {
         }
     }
     private void goToNextPage() {
-        Start17.this.dispose();
+        setVisible(false); // 현재 창 숨기기
         new Start18();
     }
     public static void main(String[] args) {

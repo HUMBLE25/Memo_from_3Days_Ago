@@ -52,7 +52,7 @@ public class Start29 extends JFrame {
         }
     }
     private void goToNextPage() {
-        Start29.this.dispose();
+        setVisible(false); // 현재 창 숨기기
         // Stage1으로 전환
         new GameFrame();
     }

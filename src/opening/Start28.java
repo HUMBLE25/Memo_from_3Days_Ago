@@ -101,7 +101,8 @@ public class Start28 extends JFrame {
             @Override
             public void mouseClicked(MouseEvent e) {
                 System.out.println("삼각형 버튼 클릭!");
-                Start28.this.dispose(); // Stage28닫기
+                dialog.dispose(); // 다이얼로그 닫기
+                dispose();
                 new Start29();
             }
 

@@ -47,7 +47,7 @@ public class Start22 extends JFrame {
         }
     }
     private void goToNextPage() {
-        Start22.this.dispose();
+        setVisible(false); // 현재 창 숨기기
         new Start23();
     }
     public static void main(String[] args) {
