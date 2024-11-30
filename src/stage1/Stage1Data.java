@@ -8,7 +8,7 @@ public class Stage1Data {
     // Images
 
     private static final ImageIcon profileJiHoon = ImageRegistry.getImage("character_프_지훈");
-    private static final ImageIcon profileJiHo = ImageRegistry.getImage("character_프_지호");
+    private static final ImageIcon profileJiHo = ImageRegistry.getImage("character_프_폐인지호");
     private static final ImageIcon profileguard = ImageRegistry.getImage("character_프_경비");
     private static final ImageIcon mainCharacterJiHoRight = ImageRegistry.getImage("character_천지호_오른쪽");
     private static final ImageIcon mainCharacterJiHoWornOut = ImageRegistry.getImage("character_폐인지호");

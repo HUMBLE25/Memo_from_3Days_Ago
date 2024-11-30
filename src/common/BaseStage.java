@@ -25,10 +25,10 @@ public abstract class BaseStage extends JPanel {
     protected static final int WINDOW_WIDTH = 1440;
     protected static final int WINDOW_HEIGHT = 1024;
     protected static final int PROFILE_X = 62, PROFILE_Y = 574, PROFILE_WIDTH = 130, PROFILE_HEIGHT = 134;
-    protected static final int NAME_X = 242, NAME_Y = 628, NAME_WIDTH = 133, NAME_HEIGHT = 48;
+    protected static final int NAME_X = 242, NAME_Y = 628, NAME_WIDTH = 240, NAME_HEIGHT = 48;
     protected static final int DIALOGUE_BOX_X = 42, DIALOGUE_BOX_Y = 737, DIALOGUE_BOX_WIDTH = 1356, DIALOGUE_BOX_HEIGHT = 245;
     protected static final int DIALOGUE_TEXT_X = 20, DIALOGUE_TEXT_Y = 20, DIALOGUE_TEXT_WIDTH = 1300, DIALOGUE_TEXT_HEIGHT = 200;
-    protected static final int CHARACTER_X = 916, CHARACTER_Y = 101, CHARACTER_WIDTH = 410, CHARACTER_HEIGHT = 1130, SUB_CHARACTER_X =274;
+    protected static final int CHARACTER_X = 916, CHARACTER_Y = 0, CHARACTER_WIDTH = 410, CHARACTER_HEIGHT = 1130, SUB_CHARACTER_X =274;
     protected static final int NEXTBTN_X = 1279, NEXTBTN_Y = 160, NEXTBTN_WIDTH = 45, NEXTBTN_HEIGHT = 45;
 
     protected JLabel nextBtn;
@@ -142,7 +142,8 @@ public abstract class BaseStage extends JPanel {
             profileNameLabel.setVisible(currentScene.getProfileName() != null);
 
             // 프로필 이미지 업데이트
-            profileImageLabel.setIcon(currentScene.getProfileImage());
+            ImageIcon scaledProfileImage = scaleImageIcon(currentScene.getProfileImage(), PROFILE_WIDTH,PROFILE_HEIGHT);
+            profileImageLabel.setIcon(scaledProfileImage);
             profileImageLabel.setVisible(currentScene.getProfileImage() != null);
 
             // 캐릭터 이미지 업데이트
@@ -150,7 +151,8 @@ public abstract class BaseStage extends JPanel {
             // 서브 캐릭터 초기화가 안됨.
             ImageIcon SubCharacterImage = currentScene.getSubCharacterImage();
             if (SubCharacterImage == null){ // SubCharacterImage가 null 일 경우
-                ImageIcon scaledCharacterImage = scaleImageIcon(currentScene.getMainCharacterImage(), CHARACTER_WIDTH, CHARACTER_HEIGHT);
+//                ImageIcon scaledCharacterImage = scaleImageIcon(currentScene.getMainCharacterImage(), CHARACTER_WIDTH, CHARACTER_HEIGHT);
+                ImageIcon scaledCharacterImage = currentScene.getMainCharacterImage(); // 이미지 리사이징 미적용
                 mainCharacterImageLabel.setIcon(scaledCharacterImage); // 크기 조정된 이미지 설정
                 mainCharacterImageLabel.setVisible(currentScene.getMainCharacterImage() != null); // null이면 false로 보이지 않는다.
                 subCharacterImageLabel.setVisible(currentScene.getSubCharacterImage() != null);
@@ -159,12 +161,14 @@ public abstract class BaseStage extends JPanel {
                 // CHARACTER_X만 바꾸면 된다.
                 // MAIN_CHARACTER_X = 832
                 // SUB_CHARACTER_X = 274
-                ImageIcon scaledMainCharacterImage = scaleImageIcon(currentScene.getMainCharacterImage(), CHARACTER_WIDTH, CHARACTER_HEIGHT);
+//                ImageIcon scaledMainCharacterImage = scaleImageIcon(currentScene.getMainCharacterImage(), CHARACTER_WIDTH, CHARACTER_HEIGHT);
+                ImageIcon scaledMainCharacterImage = currentScene.getMainCharacterImage();
                 mainCharacterImageLabel.setIcon(scaledMainCharacterImage); // 크기 조정된 이미지 설정
                 mainCharacterImageLabel.setVisible(currentScene.getMainCharacterImage() != null);
                 mainCharacterImageLabel.setLocation(832,CHARACTER_Y);
 
-                ImageIcon scaledSubCharacterImage = scaleImageIcon(SubCharacterImage, CHARACTER_WIDTH, CHARACTER_HEIGHT);
+//                ImageIcon scaledSubCharacterImage = scaleImageIcon(SubCharacterImage, CHARACTER_WIDTH, CHARACTER_HEIGHT);
+                ImageIcon scaledSubCharacterImage = SubCharacterImage;
                 subCharacterImageLabel.setIcon(scaledSubCharacterImage); // 크기 조정된 이미지 설정
                 subCharacterImageLabel.setVisible(currentScene.getSubCharacterImage() != null);
             }
@@ -200,11 +204,20 @@ public abstract class BaseStage extends JPanel {
     }
 
     // 헬퍼 메서드: ImageIcon을 지정된 크기로 조정
+    // 크기 보다는 Y좌표의 값만 수정하면 된다.
+//    private ImageIcon scaleImageIcon(ImageIcon icon, int width, int height) {
+//        if (icon == null) return null; // 이미지가 없을 경우 null 반환
+//        Image scaledImage = icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
+//        return new ImageIcon(scaledImage); // 조정된 Image를 새로운 ImageIcon으로 반환
+//    }
+
+    // 헬퍼 메서드: ImageIcon을 지정된 크기로 조정
     private ImageIcon scaleImageIcon(ImageIcon icon, int width, int height) {
         if (icon == null) return null; // 이미지가 없을 경우 null 반환
         Image scaledImage = icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
         return new ImageIcon(scaledImage); // 조정된 Image를 새로운 ImageIcon으로 반환
     }
+
 
     // 헬퍼 메서드: 배경 이미지를 원본 크기로 중앙에 배치
     private void centerBackgroundImage(ImageIcon icon) {
@@ -229,15 +242,11 @@ public abstract class BaseStage extends JPanel {
     private void moveToNextStage() {
         String nextStageName = getNextStageName();
         cardLayout.show(mainPanel, nextStageName);
-
-        // 타이틀 업데이트
     }
 
     protected abstract void initStoryData(); // Stage 스토리 초기화
     protected abstract String getNextStageName(); // 각 Stage의 다름 Stage이름 반환
-    protected void musicPlayer(){
-//        MusicController.getInstance().playMusic("music/all.mp3",true);
-    }; // 각 Stage의 다름 Stage이름 반환
+    protected void musicPlayer(){}; // 각 Stage의 다름 Stage이름 반환
 
 
 }

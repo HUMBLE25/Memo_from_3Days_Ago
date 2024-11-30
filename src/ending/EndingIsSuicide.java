@@ -88,8 +88,6 @@ public class EndingIsSuicide extends JPanel {
         @Override
         public void actionPerformed(ActionEvent e) {
             if(nextStageName.equals("EndingWrongAnswer")){
-                // ending.mp3 중지
-//                MusicController.getInstance().playMusic("music/ending.mp3",false);
                 // 오답 음악 재생
                 MusicController.getInstance().playMusic("music/not_answer.mp3",true);
             }

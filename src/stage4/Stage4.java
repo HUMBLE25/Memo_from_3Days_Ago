@@ -34,8 +34,6 @@ public class Stage4 extends BaseStage {
     }
     @Override
     protected void musicPlayer(){
-        // all.mp3 중지
-//        MusicController.getInstance().playMusic("music/all.mp3",false);
         // ending.mp3 재생
         MusicController.getInstance().playMusic("music/ending.mp3",true);
     }

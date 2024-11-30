@@ -15,10 +15,10 @@ public class EndingSelectMurder extends JPanel {
     private JPanel mainPanel;
     protected ImageIcon nextBtnImg = new ImageIcon("images/characters/다음버튼.png");
 
-    private final ImageIcon profileJiHo = ImageRegistry.getImage("character_프_지호");
-    private final ImageIcon profileDoJin = ImageRegistry.getImage("character_프_도진");
-    private final ImageIcon profileSeongHa = ImageRegistry.getImage("character_프_명호");
-    private final ImageIcon profileSeongMin = ImageRegistry.getImage("character_프_성민");
+    private final ImageIcon profileJiHo = ImageRegistry.getImage("character_프_용의자_지호");
+    private final ImageIcon profileDoJin = ImageRegistry.getImage("character_프_용의자_도진");
+    private final ImageIcon profileSeongHa = ImageRegistry.getImage("character_프_용의자_명호");
+    private final ImageIcon profileSeongMin = ImageRegistry.getImage("character_프_용의자_성민");
 
     private Color startColor = new Color(0x06213B); // start color for the gradation
     private Color endColor = new Color(0x020919);// end color for the gradation
@@ -89,13 +89,9 @@ public class EndingSelectMurder extends JPanel {
         @Override
         public void mouseClicked(MouseEvent e) {
             if(nextSceneName.equals("EndingWrongAnswer")){
-                // ending.mp3 중지
-//                MusicController.getInstance().playMusic("music/ending.mp3",false);
                 // 오답 음악 재생
                 MusicController.getInstance().playMusic("music/not_answer.mp3",true);
             }else {
-                // ending.mp3 중지
-//                MusicController.getInstance().playMusic("music/ending.mp3",false);
                 // 정답 음악 재생
                 MusicController.getInstance().playMusic("music/answer.mp3",true);
             }

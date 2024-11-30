@@ -83,12 +83,19 @@ public class ImageRegistry {
         // profile
         imageCache.put("character_프_지훈", loadImage("images/characters/프_지훈.png"));
         imageCache.put("character_프_지호", loadImage("images/characters/프_지호.png"));
+        imageCache.put("character_프_폐인지호", loadImage("images/characters/프_폐인지호.png"));
         imageCache.put("character_프_경비", loadImage("images/characters/프_경비.png"));
         imageCache.put("character_프_성민", loadImage("images/characters/프_성민.png"));
         imageCache.put("character_프_도진", loadImage("images/characters/프_도진.png"));
         imageCache.put("character_프_혜진", loadImage("images/characters/프_혜진.png"));
         imageCache.put("character_프_성하", loadImage("images/characters/프_성하.png"));
         imageCache.put("character_프_명호", loadImage("images/characters/프_명호.png"));
+        imageCache.put("character_프_용의자_명호", loadImage("images/characters/프_용의자_명호.png"));
+        imageCache.put("character_프_용의자_도진", loadImage("images/characters/프_용의자_도진.png"));
+        imageCache.put("character_프_용의자_성민", loadImage("images/characters/프_용의자_성민.png"));
+        imageCache.put("character_프_용의자_지호", loadImage("images/characters/프_용의자_지호.png"));
+
+
 
         // Characters
         imageCache.put("character_천지호_오른쪽", loadImage("images/characters/천지호_오른쪽.png"));
