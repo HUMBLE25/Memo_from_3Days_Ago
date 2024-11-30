@@ -74,6 +74,7 @@ public class ImageRegistry {
         imageCache.put("Ending_고기집", loadImage("images/ending/고기집.png"));
         imageCache.put("Ending_성하_지호_말싸움", loadImage("images/ending/성하_지호_말싸움.png"));
         imageCache.put("Ending_성하편지", loadImage("images/ending/성하편지.png"));
+        imageCache.put("Ending_작은성하편지", loadImage("images/ending/작은성하편지.png"));
         imageCache.put("Ending_3일뒤메모", loadImage("images/ending/3일뒤메모.png"));
         imageCache.put("Ending_명훈_지호_몸싸움", loadImage("images/ending/명훈_지호_몸싸움.png"));
         imageCache.put("Ending_추락전", loadImage("images/ending/추락전.png"));
@@ -94,8 +95,6 @@ public class ImageRegistry {
         imageCache.put("character_프_용의자_도진", loadImage("images/characters/프_용의자_도진.png"));
         imageCache.put("character_프_용의자_성민", loadImage("images/characters/프_용의자_성민.png"));
         imageCache.put("character_프_용의자_지호", loadImage("images/characters/프_용의자_지호.png"));
-
-
 
         // Characters
         imageCache.put("character_천지호_오른쪽", loadImage("images/characters/천지호_오른쪽.png"));

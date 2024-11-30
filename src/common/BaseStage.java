@@ -25,7 +25,7 @@ public abstract class BaseStage extends JPanel {
     protected static final int WINDOW_WIDTH = 1440;
     protected static final int WINDOW_HEIGHT = 1024;
     protected static final int PROFILE_X = 62, PROFILE_Y = 574, PROFILE_WIDTH = 130, PROFILE_HEIGHT = 134;
-    protected static final int NAME_X = 242, NAME_Y = 628, NAME_WIDTH = 240, NAME_HEIGHT = 48;
+    protected static final int NAME_X = 242, NAME_Y = 628, NAME_WIDTH = 300, NAME_HEIGHT = 48;
     protected static final int DIALOGUE_BOX_X = 42, DIALOGUE_BOX_Y = 737, DIALOGUE_BOX_WIDTH = 1356, DIALOGUE_BOX_HEIGHT = 245;
     protected static final int DIALOGUE_TEXT_X = 20, DIALOGUE_TEXT_Y = 20, DIALOGUE_TEXT_WIDTH = 1300, DIALOGUE_TEXT_HEIGHT = 200;
     protected static final int CHARACTER_X = 916, CHARACTER_Y = 0, CHARACTER_WIDTH = 410, CHARACTER_HEIGHT = 1130, SUB_CHARACTER_X =274;

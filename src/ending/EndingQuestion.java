@@ -34,7 +34,7 @@ public class EndingQuestion extends JPanel {
         question.setForeground(Color.WHITE);
         question.setBackground(new Color(0x333C41)); // 배경색을 대화 상자와 일치
         question.setVisible(true);
-        question.setBounds(112,89, 450, 56);
+        question.setBounds(112,89, 550, 56);
 
 
         JLabel nextBtn = new JLabel(nextBtnImg);

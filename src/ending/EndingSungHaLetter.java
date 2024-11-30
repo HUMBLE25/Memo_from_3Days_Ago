@@ -15,7 +15,7 @@ public class EndingSungHaLetter extends JPanel {
     private JPanel mainPanel;
 
     protected ImageIcon nextBtnImg = new ImageIcon("images/characters/다음버튼.png");
-    private static final ImageIcon sungHaLetter = ImageRegistry.getImage("Ending_성하편지");
+    private static final ImageIcon smallSungHaLetter = ImageRegistry.getImage("Ending_작은성하편지");
 
     public EndingSungHaLetter(JPanel mainPanel, CardLayout cardLayout) {
         this.mainPanel = mainPanel;
@@ -41,9 +41,9 @@ public class EndingSungHaLetter extends JPanel {
         text.setOpaque(false); // 배경 투명
         text.setEditable(false); // 수정 불가
 
-        // 오른쪽 하단에 이미지가 부탁된다.
-        JLabel letter = new JLabel(sungHaLetter);
-        letter.setBounds(928,512,468,497);
+        // 오른쪽 하단에 이미지가 부착된다.
+        JLabel letter = new JLabel(smallSungHaLetter);
+        letter.setBounds(0,0,1440,1024);
 
         // 다음 버튼
         JLabel nextBtn = new JLabel(nextBtnImg);
