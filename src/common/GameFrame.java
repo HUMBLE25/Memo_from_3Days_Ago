@@ -1,5 +1,7 @@
 package common;
 
+import ending.EndingIntro;
+import opening.Opening;
 import stage1.Stage1Intro;
 import stage2.Stage2Intro;
 import stage3.Stage3;
@@ -28,6 +30,7 @@ public class GameFrame extends JFrame {
         new Stage2Intro(mainPanel, cardLayout);
         new Stage3(mainPanel, cardLayout);
         new Stage4(mainPanel, cardLayout);
+        new EndingIntro(mainPanel, cardLayout);
 
         setVisible(true);
     }
