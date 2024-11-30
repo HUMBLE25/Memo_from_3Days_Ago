@@ -22,9 +22,12 @@ public class Ending3DayAfterMemo extends BaseStage {
         text.setOpaque(false); // 배경 투명
         text.setEditable(false); // 수정 불가
 
+        // text가 추가 되지 않음.
+        // "...................." 이게 보이지 않음.... 뭐가 문제지?
         JPanel dialogueScene = createDialogueScene();
 
         dialogueScene.add(text);
+        dialogueScene.setComponentZOrder(text,2);
         mainPanel.add(dialogueScene, "Ending3DayAfterMemo");
 
         setVisible(true); // Ending3DayAfterMemo 표시
