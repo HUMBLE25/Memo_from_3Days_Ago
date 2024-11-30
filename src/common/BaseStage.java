@@ -194,7 +194,7 @@ public abstract class BaseStage extends JPanel {
             // 문제는 프레임을 여러개 띄우개 된다. 프레임은 고정하고 데이터만 교체하는 방법을 생각해보자.
             // dispose(); 지금의 화면을 제거하고 새로운 화면을 띄운다.
             moveToNextStage(); // 스토리가 끝났을 때 다음 스테이지로 전환
-            // 빈화면이 출력된다. 다음으로 넘어가지 않는다.
+            musicPlayer(); // 스토리가 끝났을때 다음 노래 재생
         }
 
     }
@@ -225,6 +225,7 @@ public abstract class BaseStage extends JPanel {
         backgroundImage.setIcon(icon);
         backgroundImage.setBounds(x, y, imageWidth, imageHeight);
     }
+
     private void moveToNextStage() {
         String nextStageName = getNextStageName();
         cardLayout.show(mainPanel, nextStageName);
@@ -234,4 +235,9 @@ public abstract class BaseStage extends JPanel {
 
     protected abstract void initStoryData(); // Stage 스토리 초기화
     protected abstract String getNextStageName(); // 각 Stage의 다름 Stage이름 반환
+    protected void musicPlayer(){
+//        MusicController.getInstance().playMusic("music/all.mp3",true);
+    }; // 각 Stage의 다름 Stage이름 반환
+
+
 }

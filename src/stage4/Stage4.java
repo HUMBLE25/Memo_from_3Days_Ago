@@ -1,6 +1,8 @@
 package stage4;
 
 import common.BaseStage;
+import common.MusicController;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -19,17 +21,24 @@ public class Stage4 extends BaseStage {
 
      // 첫번째 장면 표시
      updateScene();
- }
+    }
 
     @Override
     protected void initStoryData() {
         // Stage?Data이 부분들만 내용을 삽입해주면 된다.
         storyData = Stage4Data.getAllScenes();
     }
+
     protected String getNextStageName(){
         return "EndingIntroScene";
     }
-
+    @Override
+    protected void musicPlayer(){
+        // all.mp3 중지
+//        MusicController.getInstance().playMusic("music/all.mp3",false);
+        // ending.mp3 재생
+        MusicController.getInstance().playMusic("music/ending.mp3",true);
+    }
     // Stage별 테스트를 위한 main 매서드 통합 이후 주석처리 혹은 삭제
     public static void main(String[] args) {
         // JFrame 생성

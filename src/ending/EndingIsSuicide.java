@@ -2,6 +2,7 @@ package ending;
 
 import common.BlinkingBtnRunnable;
 import common.GradientPanel;
+import common.MusicController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -80,11 +81,18 @@ public class EndingIsSuicide extends JPanel {
     class RadioBtnActionListener implements ActionListener{
         String nextStageName;
         public RadioBtnActionListener( String nextStageName){
+
             this.nextStageName = nextStageName;
         }
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            if(nextStageName.equals("EndingWrongAnswer")){
+                // ending.mp3 중지
+//                MusicController.getInstance().playMusic("music/ending.mp3",false);
+                // 오답 음악 재생
+                MusicController.getInstance().playMusic("music/not_answer.mp3",true);
+            }
             cardLayout.show(mainPanel,nextStageName);
         }
 
