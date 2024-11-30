@@ -1287,7 +1287,7 @@ public class EndingData {
                         .setProfileName("천지호")
                         .setProfileImage(profileJiHo)
                         .setBackgroundImage(falling)
-                        .setDialogue("문성하야!!!!!")
+                        .setDialogue("성하야!!!!!")
                         .build(),
 
                 new SceneData.Builder()
