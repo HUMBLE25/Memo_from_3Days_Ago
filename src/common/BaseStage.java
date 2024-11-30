@@ -1,7 +1,5 @@
 package common;
 
-//import stage2.Stage2;
-
 import javax.swing.*;
 import java.awt.*;
 
@@ -35,17 +33,11 @@ public abstract class BaseStage extends JPanel {
     protected ImageIcon nextBtnImg = new ImageIcon("images/characters/다음버튼.png");
     DialogueBoxListener listener = new DialogueBoxListener(this::updateScene);
     public BaseStage(JPanel mainPanel, CardLayout cardLayout) {
-//        setTitle(title);
-//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.mainPanel = mainPanel;
         this.cardLayout = cardLayout;
         setLayout(null); // 절대 배치
         setSize(WINDOW_WIDTH, WINDOW_HEIGHT); // 윈도우 크기 설정
 
-//        cardLayout = new CardLayout();
-//        mainPanel = new JPanel(cardLayout);
-
-//        add(mainPanel); // 메인 패널을 JFrame에 추가
         initializeComponents(); // 모든 컴포넌트 초기화
     }
 
@@ -147,27 +139,19 @@ public abstract class BaseStage extends JPanel {
             profileImageLabel.setVisible(currentScene.getProfileImage() != null);
 
             // 캐릭터 이미지 업데이트
-            // mainCharacterImage만 받았을 경우와 subCharacterImage를 받았을 경우를 나누자.
-            // 서브 캐릭터 초기화가 안됨.
+            // mainCharacterImage만 받았을 경우와 subCharacterImage를 받았을 경우를 나눈다.
             ImageIcon SubCharacterImage = currentScene.getSubCharacterImage();
             if (SubCharacterImage == null){ // SubCharacterImage가 null 일 경우
-//                ImageIcon scaledCharacterImage = scaleImageIcon(currentScene.getMainCharacterImage(), CHARACTER_WIDTH, CHARACTER_HEIGHT);
                 ImageIcon scaledCharacterImage = currentScene.getMainCharacterImage(); // 이미지 리사이징 미적용
                 mainCharacterImageLabel.setIcon(scaledCharacterImage); // 크기 조정된 이미지 설정
                 mainCharacterImageLabel.setVisible(currentScene.getMainCharacterImage() != null); // null이면 false로 보이지 않는다.
                 subCharacterImageLabel.setVisible(currentScene.getSubCharacterImage() != null);
             } else {
-                // 이때 둘의 간격을 정해두자.
-                // CHARACTER_X만 바꾸면 된다.
-                // MAIN_CHARACTER_X = 832
-                // SUB_CHARACTER_X = 274
-//                ImageIcon scaledMainCharacterImage = scaleImageIcon(currentScene.getMainCharacterImage(), CHARACTER_WIDTH, CHARACTER_HEIGHT);
                 ImageIcon scaledMainCharacterImage = currentScene.getMainCharacterImage();
                 mainCharacterImageLabel.setIcon(scaledMainCharacterImage); // 크기 조정된 이미지 설정
                 mainCharacterImageLabel.setVisible(currentScene.getMainCharacterImage() != null);
                 mainCharacterImageLabel.setLocation(832,CHARACTER_Y);
 
-//                ImageIcon scaledSubCharacterImage = scaleImageIcon(SubCharacterImage, CHARACTER_WIDTH, CHARACTER_HEIGHT);
                 ImageIcon scaledSubCharacterImage = SubCharacterImage;
                 subCharacterImageLabel.setIcon(scaledSubCharacterImage); // 크기 조정된 이미지 설정
                 subCharacterImageLabel.setVisible(currentScene.getSubCharacterImage() != null);
@@ -194,9 +178,6 @@ public abstract class BaseStage extends JPanel {
             currentSceneIndex++;
         } else {
             System.out.println("스토리가 끝났습니다!");
-            // 가능하다. 오버라이딩을 할 수 있나..
-            // 문제는 프레임을 여러개 띄우개 된다. 프레임은 고정하고 데이터만 교체하는 방법을 생각해보자.
-            // dispose(); 지금의 화면을 제거하고 새로운 화면을 띄운다.
             moveToNextStage(); // 스토리가 끝났을 때 다음 스테이지로 전환
             musicPlayer(); // 스토리가 끝났을때 다음 노래 재생
         }
@@ -204,20 +185,11 @@ public abstract class BaseStage extends JPanel {
     }
 
     // 헬퍼 메서드: ImageIcon을 지정된 크기로 조정
-    // 크기 보다는 Y좌표의 값만 수정하면 된다.
-//    private ImageIcon scaleImageIcon(ImageIcon icon, int width, int height) {
-//        if (icon == null) return null; // 이미지가 없을 경우 null 반환
-//        Image scaledImage = icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
-//        return new ImageIcon(scaledImage); // 조정된 Image를 새로운 ImageIcon으로 반환
-//    }
-
-    // 헬퍼 메서드: ImageIcon을 지정된 크기로 조정
     private ImageIcon scaleImageIcon(ImageIcon icon, int width, int height) {
         if (icon == null) return null; // 이미지가 없을 경우 null 반환
         Image scaledImage = icon.getImage().getScaledInstance(width, height, Image.SCALE_SMOOTH);
         return new ImageIcon(scaledImage); // 조정된 Image를 새로운 ImageIcon으로 반환
     }
-
 
     // 헬퍼 메서드: 배경 이미지를 원본 크기로 중앙에 배치
     private void centerBackgroundImage(ImageIcon icon) {
@@ -247,6 +219,4 @@ public abstract class BaseStage extends JPanel {
     protected abstract void initStoryData(); // Stage 스토리 초기화
     protected abstract String getNextStageName(); // 각 Stage의 다름 Stage이름 반환
     protected void musicPlayer(){}; // 각 Stage의 다름 Stage이름 반환
-
-
 }
