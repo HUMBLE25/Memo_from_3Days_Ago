@@ -8,7 +8,7 @@ import java.awt.*;
 public abstract class BaseStage extends JPanel {
     protected CardLayout cardLayout;
     protected JPanel mainPanel;
-
+ 
     // UI 컴포넌트
     protected JPanel dialogueScene; // 대화 장면, 바탕이 되는 JPanel
     protected JLabel profileNameLabel;

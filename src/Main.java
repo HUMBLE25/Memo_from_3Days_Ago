@@ -1,6 +1,7 @@
 import common.GameFrame;
 import common.MusicController;
 import opening.Opening;
+import opening.Opening;
 
 import javax.swing.*;
 

@@ -5,17 +5,24 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Start15 extends JFrame {
+    private int screenWidth, screenHeight; // 화면 크기 저장
+
     public Start15() {
         setTitle("Start15");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
 
-        setContentPane(new Start15.MyPanel());
+        // 화면 크기를 디스플레이 크기로 설정
+        Toolkit toolkit = Toolkit.getDefaultToolkit();
+        Dimension screenSize = toolkit.getScreenSize();
+        screenWidth = (int) screenSize.getWidth();
+        screenHeight = (int) screenSize.getHeight();
+        setSize(screenWidth, screenHeight);
+
+        setContentPane(new MyPanel());
         getContentPane().setBackground(Color.BLACK);
         getContentPane().setLayout(null);
 
-        setSize(1440, 1024);
         setVisible(true);
-
 
         addKeyListener(new KeyAdapter() {
             @Override
@@ -31,14 +38,19 @@ public class Start15 extends JFrame {
     }
 
     class MyPanel extends JPanel {
-        public MyPanel(){
+        public MyPanel() {
             setLayout(null);
 
             // 애니메이션 텍스트
             JLabel animatedText = new JLabel("", SwingConstants.CENTER);
-            animatedText.setFont(new Font("Inter", Font.BOLD, 40));
+            animatedText.setFont(new Font("Inter", Font.BOLD, (int) (screenHeight * 0.05))); // 화면 높이에 따라 폰트 크기 설정
             animatedText.setForeground(Color.WHITE);
-            animatedText.setBounds(240, 150, 800, 400); // 위치와 크기
+            animatedText.setBounds(
+                    (int) (screenWidth * 0.2),  // 가로 위치 비율
+                    (int) (screenHeight * 0.2), // 세로 위치 비율
+                    (int) (screenWidth * 0.65),  // 가로 폭 비율
+                    (int) (screenHeight * 0.4)  // 세로 높이 비율
+            );
 
             add(animatedText);
 
@@ -56,22 +68,15 @@ public class Start15 extends JFrame {
                 }
             });
             textAnimation.start();
-
-
-
-
         }
     }
 
-
-
     private void goToNextPage() {
-        Start15.this.dispose();
+        setVisible(false); // 현재 창 숨기기
         new Start16();
     }
 
     public static void main(String[] args) {
-        new Start15();
+        new Start16();
     }
 }
-

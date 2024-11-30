@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Start6 extends JFrame {
+    private int screenWidth, screenHeight; // 화면 크기 저장
+
     public Start6() {
         setTitle("Start6");
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -12,16 +14,15 @@ public class Start6 extends JFrame {
         // 화면 크기를 디스플레이 크기로 설정
         Toolkit toolkit = Toolkit.getDefaultToolkit();
         Dimension screenSize = toolkit.getScreenSize();
-        int width = (int) screenSize.getWidth();
-        int height = (int) screenSize.getHeight();
-        setSize(width, height);
+        screenWidth = (int) screenSize.getWidth();
+        screenHeight = (int) screenSize.getHeight();
+        setSize(screenWidth, screenHeight);
 
-        setContentPane(new Start6.MyPanel());
+        setContentPane(new MyPanel());
         getContentPane().setBackground(Color.BLACK);
         getContentPane().setLayout(null);
 
         setVisible(true);
-
 
         addKeyListener(new KeyAdapter() {
             @Override
@@ -37,15 +38,19 @@ public class Start6 extends JFrame {
     }
 
     class MyPanel extends JPanel {
-        public MyPanel(){
+        public MyPanel() {
             setLayout(null);
-
 
             // 애니메이션 텍스트
             JLabel animatedText = new JLabel("", SwingConstants.CENTER);
-            animatedText.setFont(new Font("Inter", Font.BOLD, 40));
+            animatedText.setFont(new Font("Inter", Font.BOLD, (int) (screenHeight * 0.05))); // 화면 높이에 따라 폰트 크기 설정
             animatedText.setForeground(Color.WHITE);
-            animatedText.setBounds(240, 150, 800, 400); // 위치와 크기
+            animatedText.setBounds(
+                    (int) (screenWidth * 0.2),  // 가로 위치 비율
+                    (int) (screenHeight * 0.2), // 세로 위치 비율
+                    (int) (screenWidth * 0.65),  // 가로 폭 비율
+                    (int) (screenHeight * 0.4)  // 세로 높이 비율
+            );
 
             add(animatedText);
 
@@ -63,13 +68,8 @@ public class Start6 extends JFrame {
                 }
             });
             textAnimation.start();
-
-
-
         }
     }
-
-
 
     private void goToNextPage() {
         Start6.this.dispose();
@@ -80,4 +80,3 @@ public class Start6 extends JFrame {
         new Start6();
     }
 }
-
