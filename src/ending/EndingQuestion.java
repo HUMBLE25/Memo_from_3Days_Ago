@@ -15,16 +15,6 @@ public class EndingQuestion extends JPanel {
     private JPanel mainPanel;
     protected ImageIcon nextBtnImg = new ImageIcon("images/characters/다음버튼.png");
     public EndingQuestion(JPanel mainPanel, CardLayout cardLayout) {
-
-        // 음악 컨트롤러
-        MusicController musicController = new MusicController();
-
-        // 전체 게임 배경음악 중지
-        musicController.playMusic("music/all.mp3", false);
-
-        // 선택 구간 음악 실행
-        musicController.playMusic("music/ending.mp3", true);
-
         this.mainPanel = mainPanel;
         this.cardLayout = cardLayout;
 

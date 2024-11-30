@@ -1,6 +1,7 @@
 package ending;
 
 import common.BaseStage;
+import common.MusicController;
 import stage4.Stage4;
 
 import javax.swing.*;
@@ -9,6 +10,10 @@ import java.awt.*;
 public class EndingIntro extends BaseStage {
     public EndingIntro(JPanel mainPanel, CardLayout cardLayout) {
         super(mainPanel, cardLayout);
+
+        // 배경 음악 실행
+        MusicController.getInstance().playMusic("music/all.mp3", false);
+        MusicController.getInstance().playMusic("music/ending.mp3", true);
 
         // 스토리 데이터 초기화
         initStoryData();
