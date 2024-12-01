@@ -80,7 +80,7 @@ Main.java file to start the game.
 
 ---
 ## 👨‍💻 Team Members
-- Project Duration: 6 weeks
+- Project Duration: 2024.10.28 ~ 2024.12.01 (6 weeks)
 - Team Members 
   - Jinkyum Kim 
     - Roles:
@@ -110,7 +110,7 @@ Main.java file to start the game.
 ---
 ## 🙏 Additional Information & Acknowledgements
 - JLayer Library: Provides MP3 playback functionality.
-- pixabay: Sound effect resources.
+- [Pixabay](https://pixabay.com/ko/music/): Sound effect resources.
 - A huge thanks to everyone who supported us in completing this project!
 
 <br>
